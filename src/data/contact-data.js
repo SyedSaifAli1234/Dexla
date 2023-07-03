@@ -6,7 +6,7 @@ import {
 
 export const contactData = [
   {
-    title: "Excelent Services",
+    title: "Excellent Services",
     icon: StarIcon,
     description: "",
   },
