@@ -1,79 +1,21 @@
 export const teamData = [
   {
-    img: "/img/team-1.jpg",
-    name: "Ryan Tompson",
-    position: "Web Developer",
-    socials: [
-      {
-        color: "light-blue",
-        name: "twitter",
-      },
-      {
-        color: "blue",
-        name: "facebook",
-      },
-      {
-        color: "pink",
-        name: "dribbble",
-      },
-    ],
+    img: "/img/s1.png",
+    name: "Digi Dexla",
+    position: "Our mission is to assist you in effectively executing digitalisation strategies within your organisation. We provide comprehensive consultation, as well as end-to-end product implementation, to ensure seamless integration and successful adoption of digital solutions.",
+    socials: [],
   },
   {
-    img: "/img/team-2.jpg",
-    name: "Romina Hadid",
-    position: "Marketing Specialist",
-    socials: [
-      {
-        color: "light-blue",
-        name: "twitter",
-      },
-      {
-        color: "blue",
-        name: "facebook",
-      },
-      {
-        color: "pink",
-        name: "dribbble",
-      },
-    ],
+    img: "/img/s2.png",
+    name: "Dexla Home",
+    position: "Wir bieten regelmäßig branchenrelevante Schulungsprogramme und Workshops an. Unsere zertifizierten Dozenten verfügen über langjährige Erfahrung in ihrem Fachgebiet und geben ihr Fachwissen gerne an ihre Schüler weiter.",
+    socials: [],
   },
   {
-    img: "/img/team-3.jpg",
-    name: "Alexa Smith",
-    position: "UI/UX Designer",
-    socials: [
-      {
-        color: "light-blue",
-        name: "twitter",
-      },
-      {
-        color: "blue",
-        name: "facebook",
-      },
-      {
-        color: "pink",
-        name: "dribbble",
-      },
-    ],
-  },
-  {
-    img: "/img/team-4.png",
-    name: "Jenna Kardi",
-    position: "Founder and CEO",
-    socials: [
-      {
-        color: "light-blue",
-        name: "twitter",
-      },
-      {
-        color: "blue",
-        name: "facebook",
-      },
-      {
-        color: "pink",
-        name: "dribbble",
-      },
-    ],
+    img: "/img/s3.png",
+    name: "Dexla Safe",
+    position: "Wir bieten regelmäßig branchenrelevante Schulungsprogramme und Workshops an. Unsere zertifizierten Dozenten verfügen über langjährige Erfahrung in ihrem Fachgebiet und geben ihr Fachwissen gerne an ihre Schüler weiter.",
+    socials: [],
   },
 ];
 

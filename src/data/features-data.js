@@ -1,31 +1,39 @@
 import {
   StarIcon,
-  ArrowPathIcon,
-  FingerPrintIcon,
+  UserGroupIcon,
+  CircleStackIcon,
+  ChartBarIcon
 } from "@heroicons/react/24/solid";
 
 export const featuresData = [
   {
     color: "blue",
-    title: "Awarded Agency",
+    title: "Increased Efficiency",
     icon: StarIcon,
     description:
-      "Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.",
+      "Digitalization streamlines processes, reduces costs, and increases efficiency through automation, such as implementing digital workflows for invoicing and payment processing.",
   },
   {
     color: "red",
-    title: "Free Revisions",
-    icon: ArrowPathIcon,
+    title: "Improved Customer Experience",
+    icon: UserGroupIcon,
     description:
-      "Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.",
+      "Digitalization enhances customer experience, fostering loyalty and positive referrals, through convenient and efficient digital customer service channels.",
   },
   {
     color: "teal",
-    title: "Verified Company",
-    icon: FingerPrintIcon,
+    title: "Better Data Insights",
+    icon: CircleStackIcon,
     description:
-      "Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!",
+      "Digitalization leverages data insights to enhance decision-making and performance through advanced analytics, uncovering customer behavior, trends, and growth opportunities.",
   },
+  {
+    color: "purple",
+    title: "New Revenue Streams",
+    icon: ChartBarIcon,
+    description:
+        "Digitalization unlocks revenue growth by leveraging new markets and revenue streams through the development of innovative digital products and services.",
+  }
 ];
 
 export default featuresData;
