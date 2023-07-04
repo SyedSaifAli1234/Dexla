@@ -1,6 +1,6 @@
 import {Typography} from "@material-tailwind/react";
 
-const DataSecurity = () => {
+const BigData = () => {
     return (
         <>
             <Typography variant="h4" color="blue-gray" className="mt-6 font-normal text-blue-gray-800">
@@ -44,4 +44,4 @@ const DataSecurity = () => {
         </>
     )
 }
-export default DataSecurity;
+export default BigData;
