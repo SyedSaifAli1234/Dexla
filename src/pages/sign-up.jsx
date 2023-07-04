@@ -56,7 +56,7 @@ export function SignUp() {
                   color="blue"
                   className="ml-1 font-bold"
                 >
-                  Sign in
+                  Our capacity
                 </Typography>
               </Link>
             </Typography>
