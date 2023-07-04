@@ -8,11 +8,11 @@ export function Footer({ title, description, socials, menus, copyright }) {
     <footer className="relative px-4 pt-8 pb-6">
       <div className="container mx-auto">
         <div className="flex flex-wrap pt-6 text-center lg:text-left">
-          <div className="w-full px-4 lg:w-6/12">
-            <Typography variant="h4" className="mb-4" color="blue-gray">
+          <div className="w-full px-4">
+            <Typography variant="h4" className="mb-4" color="blue-gray" style={{textAlign: 'center'}}>
               {title}
             </Typography>
-            <Typography className="font-normal text-blue-gray-500">
+            <Typography className="font-normal text-blue-gray-500" style={{textAlign: 'center'}}>
               {description}
             </Typography>
             {/*<div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-start">*/}
@@ -82,50 +82,8 @@ Footer.defaultProps = {
   title: "Dexla",
   description:
     "Where AI makes Digitization easy.",
-  socials: [
-    {
-      color: "blue",
-      name: "facebook",
-      path: "https://www.facebook.com/",
-    },
-    {
-      color: "light-blue",
-      name: "twitter",
-      path: "https://www.twitter.com/",
-    },
-    {
-      color: "purple",
-      name: "instagram",
-      path: "https://www.instagram.com/",
-    },
-    {
-      color: "red",
-      name: "youtube",
-      path: "",
-    },
-    {
-      color: "black",
-      name: "github",
-      path: "",
-    },
-  ],
-  menus: [
-    {
-      name: "useful links",
-      items: [
-        { name: "About Us", path: "/about" },
-      ],
-    },
-    {
-      name: "other resources",
-      items: [
-        {
-          name: "Contact Us",
-          path: "/contact",
-        },
-      ],
-    },
-  ],
+  socials: [],
+  menus: [],
   copyright: (
     <>
       Copyright © {year} Dexla.
