@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  Typography,
-  Button,
-  IconButton,
-  Input,
-  Textarea,
-} from "@material-tailwind/react";
-import { PageTitle, Footer } from "@/widgets/layout";
-import { FeatureCard, TeamCard } from "@/widgets/cards";
-import { featuresData, teamData, contactData } from "@/data";
+import {Card, CardBody, CardHeader, IconButton, Typography,} from "@material-tailwind/react";
+import {Footer, PageTitle} from "@/widgets/layout";
+import {FeatureCard, TeamCard} from "@/widgets/cards";
+import {contactData, featuresData, teamData} from "@/data";
 
 export function Home() {
   return (

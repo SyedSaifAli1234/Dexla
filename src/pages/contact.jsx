@@ -1,16 +1,5 @@
-import { Link } from "react-router-dom";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Input,
-  Checkbox,
-  Button,
-  Typography, Textarea,
-} from "@material-tailwind/react";
-import {Footer, PageTitle, SimpleFooter} from "@/widgets/layout";
-import ProjectCard from "@/widgets/ProjectCard";
+import {Button, Input, Textarea,} from "@material-tailwind/react";
+import {Footer, PageTitle} from "@/widgets/layout";
 import React from "react";
 
 export function Contact() {
