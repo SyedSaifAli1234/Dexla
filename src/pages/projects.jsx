@@ -1,6 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
-import ProjectCard from "@/widgets/ProjectCard.jsx";
+import ProjectCard from "@/widgets/projects/ProjectCard.jsx";
 import ProjectDetails from "@/pages/projectDetail";
 import projectsData from '../data/projectsData';
 import {useState} from "react";
@@ -35,9 +35,7 @@ export function Projects() {
               <div className="mb-10 border-t border-blue-gray-50 py-6 text-center">
                 {selectedProject ? (
                     <ProjectDetails
-                        title={selectedProject.title}
-                        img={selectedProject.img}
-                        desc={selectedProject.desc}
+                        selectedProject={selectedProject}
                         setSelectedProject={setSelectedProject}
                     />
                 ) : (
@@ -45,9 +43,7 @@ export function Projects() {
                       {projectsData.map((project, index) => (
                           <ProjectCard
                               key={index}
-                              title={project.title}
-                              img={project.img}
-                              desc={project.desc}
+                              project={project}
                               onClick={() => handleCardClick(project)}
                           />
                       ))}

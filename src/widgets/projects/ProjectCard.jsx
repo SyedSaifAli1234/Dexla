@@ -8,7 +8,7 @@ const ProjectCard =(props)=> {
                 <CardHeader className="relative h-56">
                     <img
                         alt="Card Image"
-                        src={props.img}
+                        src={props.project.img}
                         className="h-full w-full"
                     />
                 </CardHeader>
@@ -18,10 +18,10 @@ const ProjectCard =(props)=> {
                         color="blue-gray"
                         className="mb-3 font-bold"
                     >
-                        {props.title}
+                        {props.project.title}
                     </Typography>
                     <Typography className="font-normal text-blue-gray-500">
-                        {props.desc}
+                        {props.project.desc}
                     </Typography>
                 </CardBody>
             </Card>
