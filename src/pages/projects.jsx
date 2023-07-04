@@ -1,9 +1,4 @@
-import { Avatar, Typography, Button } from "@material-tailwind/react";
-import {
-  MapPinIcon,
-  BriefcaseIcon,
-  BuildingLibraryIcon,
-} from "@heroicons/react/24/solid";
+import { Typography } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import ProjectCard from "@/widgets/ProjectCard.jsx";
 

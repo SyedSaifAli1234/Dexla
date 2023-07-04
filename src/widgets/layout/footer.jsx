@@ -15,22 +15,22 @@ export function Footer({ title, description, socials, menus, copyright }) {
             <Typography className="font-normal text-blue-gray-500">
               {description}
             </Typography>
-            <div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-start">
-              {socials.map(({ color, name, path }) => (
-                <a
-                  key={name}
-                  href={path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IconButton color="white" className="rounded-full">
-                    <Typography color={color}>
-                      <i className={`fa-brands fa-${name}`} />
-                    </Typography>
-                  </IconButton>
-                </a>
-              ))}
-            </div>
+            {/*<div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-start">*/}
+            {/*  {socials.map(({ color, name, path }) => (*/}
+            {/*    <a*/}
+            {/*      key={name}*/}
+            {/*      href={path}*/}
+            {/*      target="_blank"*/}
+            {/*      rel="noopener noreferrer"*/}
+            {/*    >*/}
+            {/*      <IconButton color="white" className="rounded-full">*/}
+            {/*        <Typography color={color}>*/}
+            {/*          <i className={`fa-brands fa-${name}`} />*/}
+            {/*        </Typography>*/}
+            {/*      </IconButton>*/}
+            {/*    </a>*/}
+            {/*  ))}*/}
+            {/*</div>*/}
           </div>
           <div className="mx-auto mt-12 grid w-max grid-cols-2 gap-24 lg:mt-0">
             {menus.map(({ name, items }) => (
@@ -113,8 +113,7 @@ Footer.defaultProps = {
     {
       name: "useful links",
       items: [
-        { name: "About Us", path: "" },
-        { name: "Blog", path: "" },
+        { name: "About Us", path: "/about" },
       ],
     },
     {
@@ -122,7 +121,7 @@ Footer.defaultProps = {
       items: [
         {
           name: "Contact Us",
-          path: "https://contact-us?ref=mtk",
+          path: "/contact",
         },
       ],
     },
