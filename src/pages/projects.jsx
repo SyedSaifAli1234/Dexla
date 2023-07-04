@@ -1,8 +1,19 @@
 import { Typography } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import ProjectCard from "@/widgets/ProjectCard.jsx";
+import ProjectDetails from "@/pages/projectDetail";
+import projectsData from '../data/projectsData';
+import {useState} from "react";
 
 export function Projects() {
+
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const handleCardClick = (project) => {
+    console.log("Clicked");
+    setSelectedProject(project);
+  };
+
   return (
     <>
       <section className="relative block h-[50vh]">
@@ -18,15 +29,25 @@ export function Projects() {
                   What we can do for you
                 </Typography>
               </div>
-
               <div className="mb-10 border-t border-blue-gray-50 py-6 text-center">
                 <div className="mt-10 flex flex-wrap justify-center">
-                  <ProjectCard title={"Digitalisation"} img={"/img/digitalisation.jpg"} desc={"Business digitalization uses digital technologies to transform business operations, processes, and customer experiences. It uses digital tools and technologies to optimize workflows, improve efficiency, and enhance customer experiences."}/>
-                  <ProjectCard title={"Big data processing"} img={"/img/bigdata.jpg"} desc={"Our company specializes in developing cutting-edge big data analytics software solutions, empowering businesses to extract valuable insights from massive data sets and make data-driven decisions."}/>
-                  <ProjectCard title={"Data security and data anonymization"} img={"/img/security.jpg"} desc={"Our company specializes in data anonymization services, utilizing state-of-the-art techniques and algorithms to protect individual privacy while allowing organizations to derive valuable insights from anonymized datasets, enabling compliant and ethical data analysis."}/>
-                  <ProjectCard title={"Natural language processing"} img={"/img/nlp.jpg"} desc={"Our software solutions leverage Natural Language Processing expertise to analyze and interpret human language, empowering businesses to automate text-based processes, improve customer interactions, and gain valuable insights from textual data sources."}/>
-                  <ProjectCard title={"Chat based SaaS"} img={"/img/chat.jpg"} desc={"Dexla offers Chat-based SaaS services, enabling businesses to engage with their customers in real-time through interactive chat platforms, enhancing customer support, sales, and overall user experience."}/>
+                  {projectsData.map((project, index) => (
+                      <ProjectCard
+                          key={index}
+                          title={project.title}
+                          img={project.img}
+                          desc={project.desc}
+                          onClick={() => handleCardClick(project)}
+                      />
+                  ))}
                 </div>
+                {selectedProject && (
+                    <ProjectDetails
+                        title={selectedProject.title}
+                        img={selectedProject.img}
+                        desc={selectedProject.desc}
+                    />
+                )}
               </div>
             </div>
           </div>
