@@ -100,7 +100,7 @@ export function About() {
                                     <Typography variant="h4" color="blue-gray"
                                                 className="mt-2 font-normal text-blue-gray-700"
                                                 style={{textAlign: 'left'}}>
-                                        <u>How We Measure the Success of Your Digitalization Efforts</u>
+                                        <u>How We Measure the Success of Our Digitalization Efforts</u>
                                     </Typography>
                                     <Typography variant="lead" color="blue-gray" className="opacity-80 p-5"
                                                 style={{textAlign: 'justify'}}>
