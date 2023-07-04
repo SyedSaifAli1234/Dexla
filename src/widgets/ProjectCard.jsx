@@ -3,7 +3,7 @@ import React from "react";
 
 const ProjectCard =(props)=> {
     return(
-        <div className="mx-auto mt-24 mb-20 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
+        <div className="mx-auto mt-24 mb-20 flex w-full justify-center px-4 md:w-4/12 lg:mt-0" onClick={props.onClick}>
             <Card className="shadow-lg shadow-gray-500/10">
                 <CardHeader className="relative h-56">
                     <img

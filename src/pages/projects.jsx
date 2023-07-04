@@ -10,7 +10,6 @@ export function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const handleCardClick = (project) => {
-    console.log("Clicked");
     setSelectedProject(project);
   };
 
@@ -24,29 +23,35 @@ export function Projects() {
         <div className="container mx-auto">
           <div className="relative mb-6 -mt-64 flex w-full min-w-0 flex-col break-words rounded-3xl bg-white shadow-xl shadow-gray-500/5">
             <div className="px-6">
-              <div className="my-8 text-center">
-                <Typography variant="h2" color="blue-gray" className="mb-2 font-normal text-blue-gray-500">
-                  What we can do for you
-                </Typography>
-              </div>
+                {
+                    !selectedProject && (
+                        <div className="my-8 text-center">
+                            <Typography variant="h2" color="blue-gray" className="mb-2 font-normal text-blue-gray-500">
+                                What we can do for you
+                            </Typography>
+                        </div>
+                    )
+                }
               <div className="mb-10 border-t border-blue-gray-50 py-6 text-center">
-                <div className="mt-10 flex flex-wrap justify-center">
-                  {projectsData.map((project, index) => (
-                      <ProjectCard
-                          key={index}
-                          title={project.title}
-                          img={project.img}
-                          desc={project.desc}
-                          onClick={() => handleCardClick(project)}
-                      />
-                  ))}
-                </div>
-                {selectedProject && (
+                {selectedProject ? (
                     <ProjectDetails
                         title={selectedProject.title}
                         img={selectedProject.img}
                         desc={selectedProject.desc}
+                        setSelectedProject={setSelectedProject}
                     />
+                ) : (
+                    <div className="mt-10 flex flex-wrap justify-center">
+                      {projectsData.map((project, index) => (
+                          <ProjectCard
+                              key={index}
+                              title={project.title}
+                              img={project.img}
+                              desc={project.desc}
+                              onClick={() => handleCardClick(project)}
+                          />
+                      ))}
+                    </div>
                 )}
               </div>
             </div>
