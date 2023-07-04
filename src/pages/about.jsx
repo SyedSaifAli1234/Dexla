@@ -6,7 +6,7 @@ export function About() {
         <>
             <section className="relative block h-[50vh]">
                 <div
-                    className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/about1.jpg')] bg-cover bg-center"/>
+                    className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/about.jpg')] bg-cover bg-center"/>
                 <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center"/>
             </section>
             <section className="relative bg-blue-gray-50/50 py-16 px-4">
@@ -30,11 +30,6 @@ export function About() {
                                         competitive advantage. It can also improve financial performance by reducing
                                         costs, increasing revenue, and creating new opportunities.
                                     </Typography>
-                                    <img
-                                        alt="About"
-                                        src='/img/about2.png'
-                                        className="h-full w-max"
-                                    />
                                     <Typography variant="h4" color="blue-gray"
                                                 className="mt-5 font-normal text-blue-gray-700"
                                                 style={{textAlign: 'left'}}>
