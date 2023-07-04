@@ -3,6 +3,8 @@ import {
   HomeIcon,
   UserCircleIcon,
   ArrowRightOnRectangleIcon,
+  EnvelopeIcon,
+  InformationCircleIcon,
   UserPlusIcon,
   DocumentTextIcon,
 } from "@heroicons/react/24/solid";
@@ -21,14 +23,14 @@ export const routes = [
     element: <Projects />,
   },
   {
-    icon: ArrowRightOnRectangleIcon,
-    name: "Sign In",
+    icon: InformationCircleIcon,
+    name: "About",
     path: "/sign-in",
     element: <SignIn />,
   },
   {
-    icon: UserPlusIcon,
-    name: "Sign Up",
+    icon: EnvelopeIcon,
+    name: "Contact Us",
     path: "/sign-up",
     element: <SignUp />,
   },
