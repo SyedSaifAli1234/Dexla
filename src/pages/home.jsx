@@ -100,7 +100,7 @@ export function Home() {
           <PageTitle heading="Our Services">
             We are a dynamic startup revolutionizing industries with AI. Our exceptional team of seasoned professionals, backed by advanced degrees and industry experience, positions us as a prominent player in the AI field.
           </PageTitle>
-          <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-2">
             {teamData.map(({ img, name, position, socials }) => (
               <TeamCard
                 key={name}

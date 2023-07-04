@@ -7,12 +7,6 @@ export const teamData = [
   },
   {
     img: "/img/s2.png",
-    name: "Dexla Home",
-    position: "Wir bieten regelmäßig branchenrelevante Schulungsprogramme und Workshops an. Unsere zertifizierten Dozenten verfügen über langjährige Erfahrung in ihrem Fachgebiet und geben ihr Fachwissen gerne an ihre Schüler weiter.",
-    socials: [],
-  },
-  {
-    img: "/img/s3.png",
     name: "Dexla Safe",
     position: "Wir bieten regelmäßig branchenrelevante Schulungsprogramme und Workshops an. Unsere zertifizierten Dozenten verfügen über langjährige Erfahrung in ihrem Fachgebiet und geben ihr Fachwissen gerne an ihre Schüler weiter.",
     socials: [],
