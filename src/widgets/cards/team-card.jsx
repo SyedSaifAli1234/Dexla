@@ -1,9 +1,13 @@
 import PropTypes from "prop-types";
 import { Card, Avatar, Typography } from "@material-tailwind/react";
+import {useNavigate} from "react-router-dom";
 
 export function TeamCard({ img, name, position, socials }) {
+
+  const navigate = useNavigate();
+
   return (
-    <Card color="transparent" shadow={false} className="text-center">
+    <Card color="transparent" shadow={false} className="text-center" onClick={()=>{localStorage.setItem('projectNameSelected', name); navigate('/projects')}}>
       <Avatar
         src={img}
         alt={name}

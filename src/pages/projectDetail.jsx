@@ -1,7 +1,15 @@
 import {Typography} from "@material-tailwind/react";
-import React from "react";
+import React, {useEffect} from "react";
 
 const ProjectDetails = ({ selectedProject, setSelectedProject }) => {
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    }, []);
+
     return (
         <>
             <div className="my-5 text-center">

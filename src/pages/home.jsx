@@ -9,7 +9,7 @@ export function Home() {
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
         <video aria-hidden="true" muted className="absolute top-0 h-full w-full bg-cover bg-center object-cover" autoPlay loop playsInline>
-          <source src="/video/video.mp4" type="video/mp4" />
+          <source src="/video/video2.mp4" type="video/mp4" />
         </video>
         <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">

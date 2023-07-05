@@ -3,17 +3,33 @@ import { Footer } from "@/widgets/layout";
 import ProjectCard from "@/widgets/projects/ProjectCard.jsx";
 import ProjectDetails from "@/pages/projectDetail";
 import projectsData from '../data/projectsData';
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 export function Projects() {
 
   const [selectedProject, setSelectedProject] = useState(null);
+  const navigate = useNavigate();
 
   const handleCardClick = (project) => {
     setSelectedProject(project);
   };
 
-  return (
+    useEffect(() => {
+        if (localStorage.getItem('projectNameSelected')) {
+            const selectedProjectName = localStorage.getItem('projectNameSelected');
+            if (selectedProjectName === 'Digi Dexla') {
+                setSelectedProject(projectsData[0]);
+                localStorage.clear();
+            } else if (selectedProjectName === 'Dexla Safe') {
+                setSelectedProject(projectsData[2]);
+                localStorage.clear();
+            }
+        }
+    }, []);
+
+
+    return (
     <>
       <section className="relative block h-[50vh]">
         <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/background-1.jpg')] bg-cover bg-center" />

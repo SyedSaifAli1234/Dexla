@@ -24,7 +24,16 @@ export function About() {
                                 <div className="flex flex-wrap justify-center p-5">
                                     <Typography variant="lead" color="blue-gray" className="opacity-80 mb-4"
                                                 style={{textAlign: 'justify'}}>
-                                        Digitalization is essential for business success due to technological
+                                        At Dexla Tech, we specialise in a range of projects that leverage the power of AI. Our core
+                                        competencies include Digitalization Strategies, Big Data Analysis, Data Security, and the
+                                        development of AI-based solutions such as Software-as-a-Service (SaaS) offerings. We create
+                                        tailored solutions to address complex business challenges by utilising state-of-the-art algorithms
+                                        and cutting-edge techniques. We firmly believe that Artificial Intelligence has the potential to
+                                        unlock unprecedented opportunities for organisations. By tapping into the immense capabilities
+                                        of AI, we enable our clients to optimise their operations, gain invaluable insights from their data,
+                                        and achieve competitive advantages in their respective industries. Whether it's streamlining
+                                        processes, enhancing decision-making, or improving customer experiences, we are committed to
+                                        delivering tangible results through our AI-powered solutions. Digitalization is essential for business success due to technological
                                         advancements and evolving customer expectations. It involves using digital tools
                                         and technologies to optimize workflows, enhance customer experiences, and gain a
                                         competitive advantage. It can also improve financial performance by reducing
