@@ -84,6 +84,14 @@ export function Navbar({ brandName, routes, action }) {
           )}
         </IconButton>
       </div>
+      <MobileNav
+          className="rounded-xl bg-white px-4 pt-2 text-blue-gray-900"
+          open={openNav}
+      >
+        <div className="container mx-auto">
+          {navList}
+        </div>
+      </MobileNav>
     </MTNavbar>
   );
 }

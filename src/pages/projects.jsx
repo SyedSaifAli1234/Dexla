@@ -5,6 +5,7 @@ import ProjectDetails from "@/pages/projectDetail";
 import projectsData from '../data/projectsData';
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import projectsImg from "../../public/img/projects.webp";
 
 export function Projects() {
 
@@ -32,7 +33,14 @@ export function Projects() {
     return (
     <>
       <section className="relative block h-[50vh]">
-        <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/background-1.jpg')] bg-cover bg-center" />
+          <div
+              className="bg-profile-background absolute top-0 h-full w-full"
+              style={{
+                  backgroundImage: `url(${projectsImg})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+              }}
+          />
         <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
       </section>
       <section className="relative bg-blue-gray-50/50 py-16 px-4">
