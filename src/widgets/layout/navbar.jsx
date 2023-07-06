@@ -20,7 +20,7 @@ export function Navbar({ brandName, routes, action }) {
     );
   }, []);
 
-  const navList = (
+  const NavList =(props)=>(
     <ul className="mb-4 mt-2 flex flex-col gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       {routes.map(({ name, path, icon, href, target }) => (
         <Typography
@@ -29,6 +29,7 @@ export function Navbar({ brandName, routes, action }) {
           variant="small"
           color="inherit"
           className="capitalize"
+          onClick={props.onClick}
         >
           {href ? (
             <a
@@ -69,7 +70,7 @@ export function Navbar({ brandName, routes, action }) {
             {brandName}
           </Typography>
         </Link>
-        <div className="hidden lg:block">{navList}</div>
+        <div className="hidden lg:block"><NavList onClick={()=>{}}/></div>
         <IconButton
           variant="text"
           size="sm"
@@ -89,7 +90,7 @@ export function Navbar({ brandName, routes, action }) {
           open={openNav}
       >
         <div className="container mx-auto">
-          {navList}
+          <NavList onClick={() => setOpenNav(!openNav)}/>
         </div>
       </MobileNav>
     </MTNavbar>
