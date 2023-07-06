@@ -1,12 +1,19 @@
 import {Typography,} from "@material-tailwind/react";
 import {Footer} from "@/widgets/layout";
+import aboutUs from "../../public/img/about.jpg";
 
 export function About() {
     return (
         <>
             <section className="relative block h-[50vh]">
                 <div
-                    className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/about.jpg')] bg-cover bg-center"/>
+                    className="bg-profile-background absolute top-0 h-full w-full"
+                    style={{
+                        backgroundImage: `url(${aboutUs})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                />
                 <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center"/>
             </section>
             <section className="relative bg-blue-gray-50/50 py-16 px-4">

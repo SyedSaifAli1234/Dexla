@@ -1,10 +1,16 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Card, CardBody, CardHeader, IconButton, Typography,} from "@material-tailwind/react";
 import {Footer, PageTitle} from "@/widgets/layout";
 import {FeatureCard, TeamCard} from "@/widgets/cards";
 import {contactData, featuresData, teamData} from "@/data";
+import teamImg from '../../public/img/teamwork.jpeg';
 
 export function Home() {
+
+  useEffect(() => {
+    import('@/pages/projects.jsx');
+  },[]);
+
   return (
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
@@ -65,7 +71,7 @@ export function Home() {
                 <CardHeader className="relative h-56">
                   <img
                     alt="Card Image"
-                    src="/img/teamwork.jpeg"
+                    src={teamImg}
                     className="h-full w-full"
                   />
                 </CardHeader>

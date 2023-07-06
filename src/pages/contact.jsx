@@ -2,6 +2,10 @@ import { Button, Input, Textarea } from "@material-tailwind/react";
 import { Footer, PageTitle } from "@/widgets/layout";
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import Swal from "sweetalert2";
+import contactUs from "../../public/img/contactus.jpg";
+import projectsImg from "@/../../public/img/projects.webp";
+
 
 export function Contact() {
     const [name, setName] = useState("");
@@ -18,7 +22,10 @@ export function Contact() {
                 message: message,
             })
             .then((response) => {
-                console.log("Email sent successfully!", response);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Email sent successfully!'
+                });
                 setName("");
                 setEmail("");
                 setMessage("");
@@ -31,7 +38,14 @@ export function Contact() {
     return (
         <>
             <section className="relative block h-[50vh]">
-                <div className="bg-profile-background absolute top-0 h-full w-full bg-[url('/img/contactus.jpg')] bg-cover bg-center" />
+                <div
+                    className="bg-profile-background absolute top-0 h-full w-full"
+                    style={{
+                        backgroundImage: `url(${contactUs})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                    }}
+                />
                 <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
             </section>
             <section className="relative bg-blue-gray-50/50 py-16 px-4">
@@ -45,6 +59,7 @@ export function Contact() {
                                 <form className="mx-auto mt-12 max-w-3xl text-center">
                                     <div className="mb-8 flex gap-8">
                                         <Input
+                                            className="min-w-0"
                                             variant="standard"
                                             size="lg"
                                             label="Full Name"
@@ -52,6 +67,7 @@ export function Contact() {
                                             onChange={(e) => setName(e.target.value)}
                                         />
                                         <Input
+                                            className="min-w-0"
                                             variant="standard"
                                             size="lg"
                                             label="Email Address"
