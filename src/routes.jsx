@@ -6,28 +6,34 @@ const Projects = React.lazy(() => import('@/pages/projects.jsx'));
 export const routes = [
   {
     icon: HomeIcon,
-    name: "home",
+    name: "Accueil",
     path: "/home",
     element: <Home />,
   },
   {
     icon: UserCircleIcon,
-    name: "projects",
+    name: "Expertises",
     path: "/projects",
     element: <Projects />,
   },
   {
     icon: InformationCircleIcon,
-    name: "About us",
+    name: "Formations",
     path: "/about",
     element: <About />,
   },
   {
     icon: EnvelopeIcon,
-    name: "Contact Us",
+    name: "Actualités",
     path: "/contact",
     element: <Contact />,
   },
+  {
+    icon: EnvelopeIcon,
+    name: "Contact",
+    path: "/contact",
+    element: <Contact />,
+  }
 ];
 
 export default routes;

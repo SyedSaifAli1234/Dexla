@@ -15,7 +15,7 @@ export function Home() {
     <>
       <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
         <video aria-hidden="true" muted className="absolute top-0 h-full w-full bg-cover bg-center object-cover" autoPlay loop playsInline>
-          <source src="/video/video2.mp4" type="video/mp4" />
+          <source src="/video/video3.mp4" type="video/mp4" />
         </video>
         <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
         <div className="max-w-8xl container relative mx-auto">
@@ -26,7 +26,14 @@ export function Home() {
                 color="white"
                 className="mb-6 font-black"
               >
-                Where AI makes Digitalization easy
+                Droit des
+              </Typography>
+              <Typography
+                  variant="h1"
+                  color="white"
+                  className="mb-6 font-black"
+              >
+                des sociétés
               </Typography>
               <Typography variant="lead" color="white" className="opacity-80">
                 Business digitalization strategically utilizes advanced digital technologies to optimize operations, streamline processes, and enhance customer experiences, resulting in improved efficiency, productivity, and competitive advantage.

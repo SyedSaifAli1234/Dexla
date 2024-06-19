@@ -8,31 +8,31 @@ import {
 export const featuresData = [
   {
     color: "blue",
-    title: "Increased Efficiency",
+    title: "Personal Injury",
     icon: StarIcon,
     description:
-      "Digitalization streamlines processes, reduces costs, and increases efficiency through automation, such as implementing digital workflows for invoicing and payment processing.",
+      "Providing compassionate and effective representation for those injured due to accidents or negligence, ensuring you receive the compensation you deserve.",
   },
   {
     color: "red",
-    title: "Improved Customer Experience",
+    title: "Family Law",
     icon: UserGroupIcon,
     description:
-      "Digitalization enhances customer experience, fostering loyalty and positive referrals, through convenient and efficient digital customer service channels.",
+      "Offering expert legal services in divorce, child custody, and family disputes, dedicated to protecting your family's best interests.",
   },
   {
     color: "teal",
-    title: "Better Data Insights",
+    title: "Criminal Defense",
     icon: CircleStackIcon,
     description:
-      "Digitalization leverages data insights to enhance decision-making and performance through advanced analytics, uncovering customer behavior, trends, and growth opportunities.",
+      "Defending your rights with a robust strategy, from minor offenses to serious charges, committed to achieving the best possible outcome.",
   },
   {
     color: "purple",
-    title: "New Revenue Streams",
+    title: "Estate Planning",
     icon: ChartBarIcon,
     description:
-        "Digitalization unlocks revenue growth by leveraging new markets and revenue streams through the development of innovative digital products and services.",
+        "Helping you plan for the future with comprehensive estate planning, including wills, trusts, and probate services to secure your legacy.",
   }
 ];
 
