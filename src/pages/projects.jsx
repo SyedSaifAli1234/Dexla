@@ -5,7 +5,7 @@ import ProjectDetails from "@/pages/projectDetail";
 import projectsData from '../data/projectsData';
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import projectsImg from "../../public/img/projects.webp";
+import projectsImg from "../../public/img/meeting.jpg";
 
 export function Projects() {
 

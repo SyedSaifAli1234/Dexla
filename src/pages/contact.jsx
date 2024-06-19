@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import contactUs from "../../public/img/contactus.jpg";
-import projectsImg from "@/../../public/img/projects.webp";
+//import projectsImg from "@/../../public/img/projects.webp";
 
 
 export function Contact() {

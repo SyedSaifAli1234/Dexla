@@ -4,11 +4,11 @@ import Digitalization from "@/widgets/projects/Digitalization.jsx";
 import BigData from "@/widgets/projects/BigData.jsx";
 import NLP from "@/widgets/projects/NLP.jsx";
 import ChatSaas from "@/widgets/projects/ChatSaas.jsx";
-import digitalizationImg from "../../public/img/digitalisation.webp";
-import bigdataImg from "../../public/img/bigdata.webp";
-import securityImg from "../../public/img/security.webp";
-import nlpImg from "../../public/img/nlp.webp";
-import chatImg from "../../public/img/chat.webp";
+import digitalizationImg from "../../public/img/digitalisation.jpg";
+import bigdataImg from "../../public/img/bigdata.jpg";
+import securityImg from "../../public/img/security.jpg";
+import nlpImg from "../../public/img/nlp.jpg";
+import chatImg from "../../public/img/chat.jpg";
 
 const projectsData = [
     {
