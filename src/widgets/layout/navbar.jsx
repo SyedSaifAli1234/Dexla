@@ -63,7 +63,7 @@ export function Navbar({ brandName, routes, action }) {
   );
 
   return (
-    <MTNavbar color="transparent" className="p-3">
+      <MTNavbar className="bg-black bg-opacity-50 border-0 w-full">
       <div className="container mx-auto flex items-center justify-between text-white">
         <Link to="/" className="flex items-center">
           <img src={logo} alt="" className="h-auto mr-2" />

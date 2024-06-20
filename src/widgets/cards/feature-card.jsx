@@ -13,7 +13,7 @@ export function FeatureCard({ color, icon, title, description }) {
         <IconButton
           variant="gradient"
           size="lg"
-          color="blue"
+          color="blue-gray"
           className="pointer-events-none mb-6 rounded-full"
         >
           {icon}

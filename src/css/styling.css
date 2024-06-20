@@ -1,3 +1,12 @@
-html {
-    scroll-behavior: smooth;
+@keyframes move-text {
+    from {
+        right: -100px;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+.animate-move-text {
+    animation: move-text 5s linear infinite;
 }

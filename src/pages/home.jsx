@@ -1,18 +1,19 @@
 import React, { useEffect, useRef } from "react";
 import { Card, CardBody, CardHeader, Typography, Button } from "@material-tailwind/react";
-import { Footer, PageTitle } from "@/widgets/layout";
-import { FeatureCard, TeamCard } from "@/widgets/cards";
-import { contactData, featuresData, teamData } from "@/data";
+import { Footer } from "@/widgets/layout";
+import { FeatureCard } from "@/widgets/cards";
+import { featuresData } from "@/data";
 import judge from '../../public/img/judge.jpg';
 import locomotiveScroll from 'locomotive-scroll';
 import 'locomotive-scroll/src/locomotive-scroll.scss';
+import "../css/styling.css";
+import { useNavigate } from 'react-router-dom';
 
 export function Home() {
   const scrollRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    import('@/pages/projects.jsx');
-
     const scroll = new locomotiveScroll({
       el: scrollRef.current,
       smooth: true,
@@ -34,13 +35,13 @@ export function Home() {
           <div className="max-w-8xl container relative mx-auto">
             <div className="flex flex-wrap items-center">
               <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
-                <Typography variant="h1" color="white" className="mb-6 font-black">
+                <Typography variant="h1" color="white" className="mb-6 font-black text-6xl">
                   Droit des
                 </Typography>
-                <Typography variant="h1" color="white" className="mb-6 font-black">
-                  des sociétés
+                <Typography variant="h1" color="gray" className="mb-6 font-black text-6xl">
+                  sociétés
                 </Typography>
-                <Typography variant="lead" color="white" className="opacity-80">
+                <Typography variant="lead" color="white" className="opacity-80 text-xl">
                   Plus de 10 ans d'expérience
                 </Typography>
               </div>
@@ -76,11 +77,11 @@ export function Home() {
                 <Typography className="mb-12 text-lg text-blue-gray-600">
                   Fort de plus de 10 ans de pratique juridique, j'ai exercé dans plusieurs cabinets prestigieux où j'ai pu acquérir une expertise approfondie en droit des sociétés, des contrats et des affaires à destination des entrepreneurs individuels, TPE/PME et start-ups. Outre le français, je suis également compétent en anglais, ce qui me permet de représenter des clients dans des contextes internationaux.
                 </Typography>
-                <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800" size="lg">
+                <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800" size="lg" onClick={() => navigate('/projects')}>
                   En savoir plus
                 </Button>
               </div>
-              <div className="mx-auto mt 35 flex w-full px-4 md:w-4/12 lg:mt-0">
+              <div className="mx-auto mt-35 flex w-full px-4 md:w-4/12 lg:mt-0">
                 <Card className="shadow-lg shadow-gray-500/10">
                   <CardHeader className="relative h-56">
                     <img alt="Card Image" src={judge} className="h-full w-full object-cover" />
