@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
 import { Typography } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import ProjectCard from "@/widgets/projects/ProjectCard.jsx";
 import ProjectDetails from "@/pages/projectDetail";
 import projectsData from '../data/projectsData';
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import projectsImg from "../../public/img/meeting.jpg";
 import locomotiveScroll from 'locomotive-scroll';
@@ -11,9 +11,22 @@ import 'locomotive-scroll/src/locomotive-scroll.scss';
 import "../css/styling.css";
 
 export function Projects() {
-    const scrollRef = useRef(null);
+
     const [selectedProject, setSelectedProject] = useState(null);
     const navigate = useNavigate();
+    const scrollRef = useRef(null);
+
+    useEffect(() => {
+        const scroll = new locomotiveScroll({
+            el: scrollRef.current,
+            smooth: true,
+            lerp: 0.1,
+        });
+
+        return () => {
+            if (scroll) scroll.destroy();
+        };
+    }, []);
 
     const handleCardClick = (project) => {
         setSelectedProject(project);
@@ -30,18 +43,6 @@ export function Projects() {
                 localStorage.clear();
             }
         }
-    }, []);
-
-    useEffect(() => {
-        const scroll = new locomotiveScroll({
-            el: scrollRef.current,
-            smooth: true,
-            lerp: 0.1,
-        });
-
-        return () => {
-            if (scroll) scroll.destroy();
-        };
     }, []);
 
     return (
@@ -64,8 +65,11 @@ export function Projects() {
                             {
                                 !selectedProject && (
                                     <div className="my-8 text-center">
-                                        <Typography variant="h2" color="blue-gray" className="mb-2 font-normal text-blue-gray-500">
-                                            What we can do for you
+                                        <Typography variant="h1" color="blue-gray-900" className="mb-4 font-bold">
+                                            Mes spécialités
+                                        </Typography>
+                                        <Typography variant="h1" color="blue-gray-900" className="mb-4 font-bold">
+                                            Domaines de pratique juridique
                                         </Typography>
                                     </div>
                                 )
@@ -82,7 +86,7 @@ export function Projects() {
                                             <ProjectCard
                                                 key={index}
                                                 project={project}
-                                                onClick={() => handleCardClick(project)}
+                                                // onClick={() => handleCardClick(project)}
                                             />
                                         ))}
                                     </div>

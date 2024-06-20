@@ -14,7 +14,7 @@ const ProjectDetails = ({ selectedProject, setSelectedProject }) => {
         <>
             <div className="my-5 text-center">
                 <div className="flex justify-between items-center">
-                    <img className="inline-block h-10 w-10 cursor-pointer" src={'/img/back.png'} onClick={() => setSelectedProject(null)}/>
+                    <img className="inline-block h-10 w-10 cursor-pointer" src={'/img/back.png'}/>
                     <div className="flex flex-grow items-center justify-center">
                         <Typography variant="h2" color="blue-gray" className="mb-2 font-normal text-blue-gray-500">
                             {selectedProject.title}
