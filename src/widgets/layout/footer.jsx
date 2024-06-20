@@ -1,102 +1,62 @@
+import React from "react";
 import PropTypes from "prop-types";
-import { Typography, IconButton } from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 
 const year = new Date().getFullYear();
 
-export function Footer({ title, description, socials, menus, copyright }) {
+export function Footer({
+                         title = "NS Avocat",
+                         description = "Nicolas Soukatchoff",
+                         contactEmail = "accueil@soukatchoff-avocat.com",
+                         contactHours = "Lundi au vendredi : 9h - 18h",
+                         contactPhone = "06 07 16 78 56",
+                         legalNotice = "Mentions légales - RGPD"
+                       }) {
   return (
-    <footer className="relative px-4 pt-8 pb-6">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap pt-6 text-center lg:text-left">
-          <div className="w-full px-4">
-            <Typography variant="h4" className="mb-4" color="blue-gray" style={{textAlign: 'center'}}>
-              {title}
-            </Typography>
-            <Typography className="font-normal text-blue-gray-500" style={{textAlign: 'center'}}>
-              {description}
-            </Typography>
-            {/*<div className="mx-auto mt-6 mb-8 flex justify-center gap-2 md:mb-0 lg:justify-start">*/}
-            {/*  {socials.map(({ color, name, path }) => (*/}
-            {/*    <a*/}
-            {/*      key={name}*/}
-            {/*      href={path}*/}
-            {/*      target="_blank"*/}
-            {/*      rel="noopener noreferrer"*/}
-            {/*    >*/}
-            {/*      <IconButton color="white" className="rounded-full">*/}
-            {/*        <Typography color={color}>*/}
-            {/*          <i className={`fa-brands fa-${name}`} />*/}
-            {/*        </Typography>*/}
-            {/*      </IconButton>*/}
-            {/*    </a>*/}
-            {/*  ))}*/}
-            {/*</div>*/}
-          </div>
-          <div className="mx-auto mt-12 grid w-max grid-cols-2 gap-24 lg:mt-0">
-            {menus.map(({ name, items }) => (
-              <div key={name}>
-                <Typography
-                  variant="small"
-                  color="blue-gray"
-                  className="mb-2 block font-medium uppercase"
-                >
-                  {name}
-                </Typography>
-                <ul className="mt-3">
-                  {items.map((item) => (
-                    <li key={item.name}>
-                      <Typography
-                        as="a"
-                        href={item.path}
-                        target="_blank"
-                        rel="noreferrer"
-                        variant="small"
-                        className="mb-2 block font-normal text-blue-gray-500 hover:text-blue-gray-700"
-                      >
-                        {item.name}
-                      </Typography>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-        <hr className="my-6 border-gray-300" />
-        <div className="flex flex-wrap items-center justify-center md:justify-between">
-          <div className="mx-auto w-full px-4 text-center">
+      <footer className="relative bg-blue-gray-900 text-white py-8">
+        <div className="container mx-auto text-center">
+          <Typography variant="h4" className="mb-4" style={{ textAlign: 'center' }}>
+            {title}
+          </Typography>
+          <Typography className="font-normal mb-4" style={{ textAlign: 'center' }}>
+            {description}
+          </Typography>
+          <Typography className="font-normal mb-4" style={{ textAlign: 'center' }}>
+            {contactEmail}
+          </Typography>
+          <Typography className="font-normal mb-4" style={{ textAlign: 'center' }}>
+            {contactHours}
+          </Typography>
+          <Typography className="font-normal mb-4" style={{ textAlign: 'center' }}>
+            {contactPhone}
+          </Typography>
+          <hr className="my-6 border-gray-300" />
+          <div className="text-center">
             <Typography
-              variant="small"
-              className="font-normal text-blue-gray-500"
+                variant="small"
+                className="font-normal mb-2"
             >
-              {copyright}
+              {legalNotice}
+            </Typography>
+            <Typography
+                variant="small"
+                className="font-normal"
+            >
+              © {year} {title}. All rights reserved.
             </Typography>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
   );
 }
-
-Footer.defaultProps = {
-  title: "Dexla",
-  description:
-    "Where AI makes Digitization easy.",
-  socials: [],
-  menus: [],
-  copyright: (
-    <>
-      Copyright © {year} Dexla.
-    </>
-  ),
-};
 
 Footer.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  socials: PropTypes.arrayOf(PropTypes.object),
-  menus: PropTypes.arrayOf(PropTypes.object),
-  copyright: PropTypes.node,
+  contactEmail: PropTypes.string,
+  contactHours: PropTypes.string,
+  contactPhone: PropTypes.string,
+  legalNotice: PropTypes.string,
 };
 
 Footer.displayName = "/src/widgets/layout/footer.jsx";

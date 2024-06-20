@@ -8,31 +8,31 @@ import {
 export const featuresData = [
   {
     color: "blue",
-    title: "Personal Injury",
+    title: "Blessures Corporelles",
     icon: StarIcon,
     description:
-      "Providing compassionate and effective representation for those injured due to accidents or negligence, ensuring you receive the compensation you deserve.",
+        "Offrir une représentation compatissante et efficace pour les personnes blessées à la suite d'accidents ou de négligence, garantissant que vous recevez la compensation que vous méritez.",
   },
   {
     color: "red",
-    title: "Family Law",
+    title: "Droit de la Famille",
     icon: UserGroupIcon,
     description:
-      "Offering expert legal services in divorce, child custody, and family disputes, dedicated to protecting your family's best interests.",
+        "Fournir des services juridiques experts en divorce, garde d'enfants et litiges familiaux, dédiés à la protection des intérêts de votre famille.",
   },
   {
     color: "teal",
-    title: "Criminal Defense",
+    title: "Défense Pénale",
     icon: CircleStackIcon,
     description:
-      "Defending your rights with a robust strategy, from minor offenses to serious charges, committed to achieving the best possible outcome.",
+        "Défendre vos droits avec une stratégie robuste, des infractions mineures aux accusations graves, engagés à obtenir le meilleur résultat possible.",
   },
   {
     color: "purple",
-    title: "Estate Planning",
+    title: "Planification Patrimoniale",
     icon: ChartBarIcon,
     description:
-        "Helping you plan for the future with comprehensive estate planning, including wills, trusts, and probate services to secure your legacy.",
+        "Vous aider à planifier l'avenir avec une planification patrimoniale complète, y compris les testaments, les fiducies et les services de succession pour sécuriser votre héritage.",
   }
 ];
 

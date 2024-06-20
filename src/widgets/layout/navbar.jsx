@@ -66,10 +66,7 @@ export function Navbar({ brandName, routes, action }) {
     <MTNavbar color="transparent" className="p-3">
       <div className="container mx-auto flex items-center justify-between text-white">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="" className="w-16 h-auto mr-2" />
-          <Typography variant={"h4"} className="cursor-pointer py-1.5 font-bold">
-            {brandName}
-          </Typography>
+          <img src={logo} alt="" className="h-auto mr-2" />
         </Link>
         <div className="hidden lg:block"><NavList onClick={()=>{}}/></div>
         <IconButton
@@ -97,10 +94,6 @@ export function Navbar({ brandName, routes, action }) {
     </MTNavbar>
   );
 }
-
-Navbar.defaultProps = {
-  brandName: "Dexla"
-};
 
 Navbar.propTypes = {
   brandName: PropTypes.string,

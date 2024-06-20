@@ -13,7 +13,7 @@ export function FeatureCard({ color, icon, title, description }) {
         <IconButton
           variant="gradient"
           size="lg"
-          color={color}
+          color="blue"
           className="pointer-events-none mb-6 rounded-full"
         >
           {icon}
@@ -28,10 +28,6 @@ export function FeatureCard({ color, icon, title, description }) {
     </Card>
   );
 }
-
-FeatureCard.defaultProps = {
-  color: "blue",
-};
 
 FeatureCard.propTypes = {
   color: PropTypes.oneOf([
