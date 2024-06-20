@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Card, CardBody, CardHeader, Typography, Button } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import { FeatureCard } from "@/widgets/cards";
@@ -9,9 +9,20 @@ import 'locomotive-scroll/src/locomotive-scroll.scss';
 import "../css/styling.css";
 import { useNavigate } from 'react-router-dom';
 
+const texts = [
+  ["Droit des", "sociétés", "Plus de 10 ans d'expérience"],
+  ["Droit des", "contrats", "à destination des entrepreneurs individuels, TPE/PME, start-up"],
+  ["Droit des", "affaires", "Sens du relationnel - Anglais courant"]
+];
+
+const animationDuration = 300; // Duration in milliseconds
+const animationInterval = 4000; // Interval in milliseconds for text change
+
 export function Home() {
-  const scrollRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [animateOut, setAnimateOut] = useState(false); // State to trigger fade out animation
   const navigate = useNavigate();
+  const scrollRef = useRef(null);
 
   useEffect(() => {
     const scroll = new locomotiveScroll({
@@ -20,7 +31,17 @@ export function Home() {
       lerp: 0.1,
     });
 
+    // Set interval to change text every animationInterval milliseconds
+    const interval = setInterval(() => {
+      setAnimateOut(true); // Trigger fade out animation
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
+        setAnimateOut(false); // Reset animation state after changing text
+      }, animationDuration);
+    }, animationInterval);
+
     return () => {
+      clearInterval(interval); // Clear interval on component unmount
       if (scroll) scroll.destroy();
     };
   }, []);
@@ -35,15 +56,25 @@ export function Home() {
           <div className="max-w-8xl container relative mx-auto">
             <div className="flex flex-wrap items-center">
               <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
-                <Typography variant="h1" color="white" className="mb-6 font-black text-6xl">
+                <Typography variant="h1" color="white" className={`mb-6 font-black text-6xl`}>
                   Droit des
                 </Typography>
-                <Typography variant="h1" color="gray" className="mb-6 font-black text-6xl">
-                  sociétés
+                <Typography variant="h1" color="gray" className={`mb-6 font-black text-6xl ${animateOut ? 'typography-animation' : 'typography-animation-show'}`}>
+                  {texts[currentIndex][1]}
                 </Typography>
-                <Typography variant="lead" color="white" className="opacity-80 text-xl">
-                  Plus de 10 ans d'expérience
+                <Typography variant="lead" color="white" className={`opacity-80 text-xl ${animateOut ? 'typography-animation' : 'typography-animation-show'}`}>
+                  {texts[currentIndex][2]}
                 </Typography>
+                <div className="mt-8 flex justify-center space-x-4">
+                  <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800 rounded-none"
+                          size="large" onClick={() => navigate('/expertises')}>
+                    EN SAVOIR PLUS
+                  </Button>
+                  <Button className="bg-transparent border border-blue-gray-900 text-white
+            hover:bg-blue-gray-900 hover:text-white rounded-none" size="large" onClick={() => navigate('/contact')}>
+                    Prendre rendez-vous
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -77,8 +108,8 @@ export function Home() {
                 <Typography className="mb-12 text-lg text-blue-gray-600">
                   Fort de plus de 10 ans de pratique juridique, j'ai exercé dans plusieurs cabinets prestigieux où j'ai pu acquérir une expertise approfondie en droit des sociétés, des contrats et des affaires à destination des entrepreneurs individuels, TPE/PME et start-ups. Outre le français, je suis également compétent en anglais, ce qui me permet de représenter des clients dans des contextes internationaux.
                 </Typography>
-                <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800" size="lg" onClick={() => navigate('/projects')}>
-                  En savoir plus
+                <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800 rounded-none" size="lg" onClick={() => navigate('/expertises')}>
+                  EN SAVOIR PLUS →
                 </Button>
               </div>
               <div className="mx-auto mt-35 flex w-full px-4 md:w-4/12 lg:mt-0">

@@ -1,0 +1,39 @@
+/* Custom CSS for Actualities Page */
+.text-gray-600 {
+    color: #718096; /* Custom gray color */
+}
+
+.font-bold {
+    font-weight: 700; /* Bold font */
+}
+
+.bg-black/75 {
+    background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent black background */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Add custom font styles */
+body, .font-bold, .text-gray-600, .font-medium {
+    font-family: 'YourCustomFont', sans-serif; /* Replace with your custom font */
+}
+
+/* Custom font sizes */
+h6, .text-lg {
+    font-size: 1.125rem; /* Match custom font size */
+}
+
+h5, .text-xl {
+    font-size: 1.25rem; /* Match custom font size */
+}
+
+.body1, .text-base {
+    font-size: 1rem; /* Match custom font size */
+}
+
+.body2, .text-sm {
+    font-size: 0.875rem; /* Match custom font size */
+}

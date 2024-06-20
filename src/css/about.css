@@ -1,0 +1,33 @@
+/* Custom CSS for About Page */
+.text-orange-600 {
+    color: #C47D45; /* Custom orange color */
+}
+
+.text-blue-gray-900 {
+    color: #2B3A42; /* Custom dark blue-gray color */
+}
+
+.text-blue-gray-700 {
+    color: #4A5568; /* Custom blue-gray for body text */
+}
+
+.font-extrabold {
+    font-weight: 800; /* Match the boldness */
+}
+
+.font-medium {
+    font-weight: 500; /* Medium weight for subheading */
+}
+
+.leading-relaxed {
+    line-height: 1.75; /* Relaxed line height for readability */
+}
+
+.bg-orange-600:hover {
+    background-color: #B3583F; /* Darker shade for hover effect */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}

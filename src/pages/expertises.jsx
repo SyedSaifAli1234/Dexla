@@ -1,7 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import ProjectCard from "@/widgets/projects/ProjectCard.jsx";
-import ProjectDetails from "@/pages/projectDetail";
 import projectsData from '../data/projectsData';
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +9,7 @@ import locomotiveScroll from 'locomotive-scroll';
 import 'locomotive-scroll/src/locomotive-scroll.scss';
 import "../css/styling.css";
 
-export function Projects() {
+export function Expertises() {
 
     const [selectedProject, setSelectedProject] = useState(null);
     const navigate = useNavigate();
@@ -75,22 +74,15 @@ export function Projects() {
                                 )
                             }
                             <div className="mb-10 border-t border-blue-gray-50 py-6 text-center">
-                                {selectedProject ? (
-                                    <ProjectDetails
-                                        selectedProject={selectedProject}
-                                        setSelectedProject={setSelectedProject}
-                                    />
-                                ) : (
-                                    <div className="mt-10 flex flex-wrap justify-center">
-                                        {projectsData.map((project, index) => (
-                                            <ProjectCard
-                                                key={index}
-                                                project={project}
-                                                // onClick={() => handleCardClick(project)}
-                                            />
-                                        ))}
-                                    </div>
-                                )}
+                                <div className="mt-10 flex flex-wrap justify-center">
+                                    {projectsData.map((project, index) => (
+                                        <ProjectCard
+                                            key={index}
+                                            project={project}
+                                            // onClick={() => handleCardClick(project)}
+                                        />
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -103,4 +95,4 @@ export function Projects() {
     );
 }
 
-export default Projects;
+export default Expertises;

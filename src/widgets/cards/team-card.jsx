@@ -7,7 +7,7 @@ export function TeamCard({ img, name, position, socials }) {
   const navigate = useNavigate();
 
   return (
-    <Card color="transparent" shadow={false} className="text-center" onClick={()=>{localStorage.setItem('projectNameSelected', name); navigate('/projects')}}>
+    <Card color="transparent" shadow={false} className="text-center" onClick={()=>{localStorage.setItem('projectNameSelected', name); navigate('/expertises')}}>
       <Avatar
         src={img}
         alt={name}
