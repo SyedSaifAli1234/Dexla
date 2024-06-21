@@ -2,10 +2,32 @@ import { Typography, Button } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import aboutUs from "../../public/img/about.jpg";
 import '../css/about.css';
+import { useEffect, useRef } from "react";
+import locomotiveScroll from 'locomotive-scroll';
+import 'locomotive-scroll/src/locomotive-scroll.scss';
+import "../css/styling.css";
 
 export function About() {
+    const scrollRef = useRef(null);
+
+    useEffect(() => {
+        let scroll;
+        const timeout = setTimeout(() => {
+            scroll = new locomotiveScroll({
+                el: scrollRef.current,
+                smooth: true,
+                lerp: 0.1,
+            });
+        }, 100); // Delay initialization to ensure all elements are loaded
+
+        return () => {
+            if (scroll) scroll.destroy();
+            clearTimeout(timeout);
+        };
+    }, []);
+
     return (
-        <>
+        <div data-scroll-container ref={scrollRef}>
             <section className="relative block h-[50vh]">
                 <div
                     className="bg-profile-background absolute top-0 h-full w-full"
@@ -50,7 +72,7 @@ export function About() {
             <div className="bg-blue-gray-50/50">
                 <Footer />
             </div>
-        </>
+        </div>
     );
 }
 
