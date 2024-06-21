@@ -37,3 +37,12 @@ h5, .text-xl {
 .body2, .text-sm {
     font-size: 0.875rem; /* Match custom font size */
 }
+
+/* Additional custom styles */
+.container.max-w-sm {
+    max-width: 320px;
+}
+
+img.max-w-xs {
+    max-width: 200px;
+}
