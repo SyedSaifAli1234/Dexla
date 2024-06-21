@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 import locomotiveScroll from 'locomotive-scroll';
 import 'locomotive-scroll/src/locomotive-scroll.scss';
 import "../css/styling.css";
+import photocv from "../../public/img/photocv.png";
 
 export function About() {
     const scrollRef = useRef(null);
@@ -63,7 +64,7 @@ export function About() {
                                 </div>
                             </div>
                             <div className="w-full lg:w-1/2 px-4">
-                                <img src="../../public/img/photocv.png" alt="Nicolas Soukatchoff" className="rounded-lg shadow-lg" />
+                                <img src={photocv} alt="Nicolas Soukatchoff" className="rounded-lg shadow-lg" />
                             </div>
                         </div>
                     </div>
