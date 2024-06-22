@@ -5,7 +5,7 @@ import projectsData from '../data/projectsData';
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import projectsImg from "../../public/img/meeting.jpg";
-import SmoothScrollbar from 'smooth-scrollbar'; // Import Smooth Scrollbar
+import SmoothScrollbar from 'smooth-scrollbar';
 import "../css/styling.css";
 
 export function Expertises() {

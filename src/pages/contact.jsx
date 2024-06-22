@@ -4,12 +4,12 @@ import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import contactUs from "../../public/img/contactus.jpg";
-//import projectsImg from "@/../../public/img/projects.webp";
-
+import '../css/contact.css';
 
 export function Contact() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
 
     emailjs.init("qypEBbU0sp4R-nhpQ");
@@ -19,6 +19,7 @@ export function Contact() {
             .send("service_rwv5usl", "template_qbh7edg", {
                 from_name: name,
                 from_email: email,
+                subject: subject,
                 message: message,
             })
             .then((response) => {
@@ -28,6 +29,7 @@ export function Contact() {
                 });
                 setName("");
                 setEmail("");
+                setSubject("");
                 setMessage("");
             })
             .catch((error) => {
@@ -56,40 +58,69 @@ export function Contact() {
                                 <PageTitle heading="Want to write us?">
                                     Complete this form and we will get back to you in 24 hours.
                                 </PageTitle>
-                                <form className="mx-auto mt-12 max-w-3xl text-center">
-                                    <div className="mb-8 flex gap-8">
+                                <form className="mx-auto mt-12 max-w-3xl text-left">
+                                    <div className="mb-4">
                                         <Input
-                                            className="min-w-0"
-                                            variant="standard"
+                                            variant="outlined"
                                             size="lg"
-                                            label="Full Name"
+                                            label="Name"
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
-                                        />
-                                        <Input
-                                            className="min-w-0"
-                                            variant="standard"
-                                            size="lg"
-                                            label="Email Address"
-                                            value={email}
-                                            onChange={(e) => setEmail(e.target.value)}
+                                            className="w-full"
                                         />
                                     </div>
-                                    <Textarea
-                                        variant="standard"
-                                        size="lg"
-                                        label="Message"
-                                        rows={8}
-                                        value={message}
-                                        onChange={(e) => setMessage(e.target.value)}
-                                    />
+                                    <div className="mb-4">
+                                        <Input
+                                            variant="outlined"
+                                            size="lg"
+                                            label="Email"
+                                            value={email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                            className="w-full"
+                                        />
+                                    </div>
+                                    <div className="mb-4">
+                                        <Input
+                                            variant="outlined"
+                                            size="lg"
+                                            label="Subject"
+                                            value={subject}
+                                            onChange={(e) => setSubject(e.target.value)}
+                                            className="w-full"
+                                        />
+                                    </div>
+                                    <div className="mb-4">
+                                        <Textarea
+                                            variant="outlined"
+                                            size="lg"
+                                            label="Message"
+                                            rows={8}
+                                            value={message}
+                                            onChange={(e) => setMessage(e.target.value)}
+                                            className="w-full"
+                                        />
+                                    </div>
+                                    <div className="mb-4">
+                                        <Input
+                                            variant="outlined"
+                                            size="lg"
+                                            label="3 + 4 = ?"
+                                            className="w-full"
+                                        />
+                                    </div>
+                                    <div className="mb-4 flex items-center">
+                                        <input type="checkbox" id="agreement" className="mr-2" />
+                                        <label htmlFor="agreement" className="text-sm text-gray-600">
+                                            J'accepte les conditions d'utilisation et la politique de confidentialité et je déclare avoir lu les informations requises conformément à l'article 13 du RGPD.
+                                        </label>
+                                    </div>
                                     <Button
                                         variant="gradient"
                                         size="lg"
-                                        className="mt-8"
+                                        className="w-full mt-4"
                                         onClick={emailHandler}
                                     >
-                                        Send Message
+                                        Envoyer
                                     </Button>
                                 </form>
                             </div>

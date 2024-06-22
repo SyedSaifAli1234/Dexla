@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { Navbar } from '@/widgets/layout';
 import routes from '@/routes';
-import './css/index.css'
+import '../App.css';
 
 function App() {
     return (

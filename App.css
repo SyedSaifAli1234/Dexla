@@ -1,0 +1,11 @@
+/* src/css/index.css */
+@font-face {
+    font-family: 'Frank Ruhl Libre';
+    src: url('public/fonts/FrankRuhlLibre-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-sans {
+    font-family: 'Frank Ruhl Libre', serif !important;
+}

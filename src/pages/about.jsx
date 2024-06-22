@@ -59,9 +59,41 @@ export function About() {
                                     <Typography variant="body1" className="text-orange-600 font-medium mb-4">
                                         Plus de 12 ans d'expérience à votre service.
                                     </Typography>
-                                    <Typography variant="body1" className="text-blue-gray-700 leading-relaxed mb-6">
-                                        Certificat d'aptitude à la profession d'avocat – École de formation des barreaux de la Cour d’appel de Paris / Master 2 Droit international privé et du commerce international / Master 1, Droit des affaires – Université Panthéon-Assas Paris II / Licence bi-disciplinaire droit et économie – Université Nancy II.
-                                    </Typography>
+                                    <div className="text-blue-gray-700 leading-relaxed mb-6">
+                                        <section className="mb-4">
+                                            <Typography variant="body1" className="font-bold">
+                                                Certificat d'aptitude à la profession d'avocat
+                                            </Typography>
+                                            <Typography variant="body1">
+                                                École de formation des barreaux de la Cour d’appel de Paris
+                                            </Typography>
+                                        </section>
+                                        <section className="mb-4">
+                                            <Typography variant="body1" className="font-bold">
+                                                Master 2 Droit international privé et du commerce international
+                                            </Typography>
+                                            <Typography variant="body1">
+                                                Université Panthéon-Assas Paris II
+                                            </Typography>
+                                        </section>
+                                        <section className="mb-4">
+                                            <Typography variant="body1" className="font-bold">
+                                                Master 1, Droit des affaires
+                                            </Typography>
+                                            <Typography variant="body1">
+                                                Université Panthéon-Assas Paris II
+                                            </Typography>
+                                        </section>
+                                        <section className="mb-4">
+                                            <Typography variant="body1" className="font-bold">
+                                                Licence bi-disciplinaire droit et économie
+                                            </Typography>
+                                            <Typography variant="body1">
+                                                Université Nancy II
+                                            </Typography>
+                                        </section>
+                                    </div>
+
                                     <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800 rounded-none">
                                         EN SAVOIR PLUS →
                                     </Button>
