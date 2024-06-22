@@ -1,13 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Card, CardBody, CardHeader, Typography, Button } from "@material-tailwind/react";
+import { Typography, Button, Card, CardBody, CardHeader } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import { FeatureCard } from "@/widgets/cards";
 import { featuresData } from "@/data";
 import judge from '../../public/img/judge.jpg';
-import locomotiveScroll from 'locomotive-scroll';
-import 'locomotive-scroll/src/locomotive-scroll.scss';
-import "../css/styling.css";
+import SmoothScrollbar from 'smooth-scrollbar'; // Import Smooth Scrollbar
 import { useNavigate } from 'react-router-dom';
+import '../css/home.css';
 
 const texts = [
   ["Droit des", "sociétés", "Plus de 10 ans d'expérience"],
@@ -25,13 +24,17 @@ export function Home() {
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    const scroll = new locomotiveScroll({
-      el: scrollRef.current,
-      smooth: true,
-      lerp: 0.1,
-    });
+    let scrollbarInstance;
 
-    // Set interval to change text every animationInterval milliseconds
+    const initializeScrollbar = () => {
+      scrollbarInstance = SmoothScrollbar.init(scrollRef.current, {
+        damping: 0.1,
+        thumbMinSize: 20,
+        renderByPixels: true,
+        alwaysShowTracks: false,
+      });
+    };
+
     const interval = setInterval(() => {
       setAnimateOut(true); // Trigger fade out animation
       setTimeout(() => {
@@ -40,14 +43,18 @@ export function Home() {
       }, animationDuration);
     }, animationInterval);
 
+    initializeScrollbar(); // Initialize Smooth Scrollbar
+
     return () => {
       clearInterval(interval); // Clear interval on component unmount
-      if (scroll) scroll.destroy();
+      if (scrollbarInstance) {
+        scrollbarInstance.destroy();
+      }
     };
   }, []);
 
   return (
-      <div data-scroll-container ref={scrollRef}>
+      <div data-scrollbar ref={scrollRef}>
         <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
           <video aria-hidden="true" muted className="absolute top-0 h-full w-full bg-cover bg-center object-cover" autoPlay loop playsInline>
             <source src="/video/video3.mp4" type="video/mp4" />

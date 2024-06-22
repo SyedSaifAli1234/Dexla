@@ -3,8 +3,7 @@ import { Footer } from "@/widgets/layout";
 import aboutUs from "../../public/img/about.jpg";
 import '../css/about.css';
 import { useEffect, useRef } from "react";
-import locomotiveScroll from 'locomotive-scroll';
-import 'locomotive-scroll/src/locomotive-scroll.scss';
+import SmoothScrollbar from 'smooth-scrollbar'; // Import Smooth Scrollbar
 import "../css/styling.css";
 import photocv from "../../public/img/photocv.png";
 
@@ -12,23 +11,28 @@ export function About() {
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        let scroll;
-        const timeout = setTimeout(() => {
-            scroll = new locomotiveScroll({
-                el: scrollRef.current,
-                smooth: true,
-                lerp: 0.1,
+        let scrollbarInstance;
+
+        const initializeScrollbar = () => {
+            scrollbarInstance = SmoothScrollbar.init(scrollRef.current, {
+                damping: 0.1,
+                thumbMinSize: 20,
+                renderByPixels: true,
+                alwaysShowTracks: false,
             });
-        }, 100); // Delay initialization to ensure all elements are loaded
+        };
+
+        initializeScrollbar();
 
         return () => {
-            if (scroll) scroll.destroy();
-            clearTimeout(timeout);
+            if (scrollbarInstance) {
+                scrollbarInstance.destroy();
+            }
         };
     }, []);
 
     return (
-        <div data-scroll-container ref={scrollRef}>
+        <div data-scrollbar ref={scrollRef}>
             <section className="relative block h-[50vh]">
                 <div
                     className="bg-profile-background absolute top-0 h-full w-full"

@@ -1,0 +1,4 @@
+[data-scrollbar] {
+    height: 100vh;
+    overflow: hidden;
+}

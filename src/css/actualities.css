@@ -16,12 +16,10 @@ button:focus {
     box-shadow: none;
 }
 
-/* Add custom font styles */
 body, .font-bold, .text-gray-600, .font-medium {
     font-family: 'YourCustomFont', sans-serif; /* Replace with your custom font */
 }
 
-/* Custom font sizes */
 h6, .text-lg {
     font-size: 1.125rem; /* Match custom font size */
 }
@@ -38,11 +36,23 @@ h5, .text-xl {
     font-size: 0.875rem; /* Match custom font size */
 }
 
-/* Additional custom styles */
 .container.max-w-sm {
     max-width: 320px;
 }
 
 img.max-w-xs {
     max-width: 200px;
+}
+
+.card {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+[data-scrollbar] {
+    height: 100vh;
+    overflow: hidden;
 }

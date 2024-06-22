@@ -5,8 +5,7 @@ import projectsData from '../data/projectsData';
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import projectsImg from "../../public/img/meeting.jpg";
-import locomotiveScroll from 'locomotive-scroll';
-import 'locomotive-scroll/src/locomotive-scroll.scss';
+import SmoothScrollbar from 'smooth-scrollbar'; // Import Smooth Scrollbar
 import "../css/styling.css";
 
 export function Expertises() {
@@ -16,14 +15,23 @@ export function Expertises() {
     const scrollRef = useRef(null);
 
     useEffect(() => {
-        const scroll = new locomotiveScroll({
-            el: scrollRef.current,
-            smooth: true,
-            lerp: 0.1,
-        });
+        let scrollbarInstance;
+
+        const initializeScrollbar = () => {
+            scrollbarInstance = SmoothScrollbar.init(scrollRef.current, {
+                damping: 0.1,
+                thumbMinSize: 20,
+                renderByPixels: true,
+                alwaysShowTracks: false,
+            });
+        };
+
+        initializeScrollbar();
 
         return () => {
-            if (scroll) scroll.destroy();
+            if (scrollbarInstance) {
+                scrollbarInstance.destroy();
+            }
         };
     }, []);
 
@@ -45,7 +53,7 @@ export function Expertises() {
     }, []);
 
     return (
-        <div data-scroll-container ref={scrollRef}>
+        <div data-scrollbar ref={scrollRef}>
             <section className="relative block h-[50vh]">
                 <div
                     className="bg-profile-background absolute top-0 h-full w-full"

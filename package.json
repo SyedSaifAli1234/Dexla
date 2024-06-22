@@ -22,6 +22,7 @@
     "react-router-dom": "^6.23.1",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
+    "smooth-scrollbar": "^8.8.4",
     "sweetalert2": "^11.7.12",
     "swiper": "^11.1.4"
   },
