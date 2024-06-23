@@ -35,23 +35,6 @@ export function Expertises() {
         };
     }, []);
 
-    const handleCardClick = (project) => {
-        setSelectedProject(project);
-    };
-
-    useEffect(() => {
-        if (localStorage.getItem('projectNameSelected')) {
-            const selectedProjectName = localStorage.getItem('projectNameSelected');
-            if (selectedProjectName === 'Digi Dexla') {
-                setSelectedProject(projectsData[0]);
-                localStorage.clear();
-            } else if (selectedProjectName === 'Dexla Safe') {
-                setSelectedProject(projectsData[2]);
-                localStorage.clear();
-            }
-        }
-    }, []);
-
     return (
         <div data-scrollbar ref={scrollRef}>
             <section className="relative block h-[50vh]">
@@ -87,7 +70,6 @@ export function Expertises() {
                                         <ProjectCard
                                             key={index}
                                             project={project}
-                                            // onClick={() => handleCardClick(project)}
                                         />
                                     ))}
                                 </div>
