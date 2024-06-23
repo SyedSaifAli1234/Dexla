@@ -5,12 +5,10 @@ import publicationBack from "../../public/img/publicationBack.jpg";
 import publicationImage from "../../public/img/publication.png";
 import '../css/actualities.css';
 import SmoothScrollbar from "smooth-scrollbar";
-import { CSSTransition } from 'react-transition-group';
 
 export function Actualities() {
     const scrollRef = useRef(null);
     const [publicationDetail, setPublicationDetail] = useState(false);
-    const nodeRef = useRef(null);
 
     useEffect(() => {
         let scrollbarInstance;
@@ -49,15 +47,8 @@ export function Actualities() {
                 />
                 <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
             </section>
-
-            <CSSTransition
-                in={publicationDetail}
-                timeout={300}
-                classNames="fade"
-                nodeRef={nodeRef}
-                unmountOnExit
-            >
-                <section ref={nodeRef} className="relative bg-white py-8 px-4 transition-all duration-300">
+            {publicationDetail ? (
+                <section className="relative bg-white py-8 px-4">
                     <div className="container max-w-4xl mx-auto text-left">
                         <button type="button"
                                 className="mb-10 text-white bg-blue-gray-500 hover:bg-blue-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-gray-600 dark:hover:bg-blue-gray-700 dark:focus:ring-blue-gray-800"
@@ -67,6 +58,7 @@ export function Actualities() {
                             </svg>
                             Retour
                         </button>
+
 
                         <Typography variant="h6" className="text-gray-600 mb-2">👤 Nicolas | 📅 21 December 2023</Typography>
                         <Typography variant="h4" className="font-bold mb-6">Comprendre le rôle essentiel d'un avocat dans le système juridique</Typography>
@@ -85,9 +77,7 @@ export function Actualities() {
                         </Typography>
                     </div>
                 </section>
-            </CSSTransition>
-
-            {!publicationDetail && (
+            ) : (
                 <section className="relative bg-white py-8 px-4">
                     <div className="container max-w-sm mx-auto text-left">
                         <div className="px-4 py-6">
