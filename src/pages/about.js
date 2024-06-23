@@ -1,10 +1,8 @@
 import { Typography, Button } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import aboutUs from "../../public/img/about.jpg";
-import '../css/about.css';
 import { useEffect, useRef } from "react";
 import SmoothScrollbar from 'smooth-scrollbar'; // Import Smooth Scrollbar
-import "../css/styling.css";
 import photocv from "../../public/img/photocv.png";
 
 export function About() {

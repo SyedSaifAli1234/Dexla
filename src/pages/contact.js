@@ -4,7 +4,6 @@ import { Footer, PageTitle } from "@/widgets/layout";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import contactUs from "../../public/img/contactus.jpg";
-import "../css/contact.css"; // Ensure this is the correct path to your CSS file
 
 export function Contact() {
     const [name, setName] = useState("");

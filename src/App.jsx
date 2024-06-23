@@ -1,23 +1,15 @@
-import React, { Suspense } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import React from 'react';
 import { Navbar } from '@/widgets/layout';
-import routes from '@/routes';
 import '../App.css';
+import routes from "@/routes";
 
-function App() {
+function App({ Component, pageProps }) {
     return (
         <>
             <div className="container absolute left-2/4 z-10 mx-auto -translate-x-2/4 p-4">
-                <Navbar routes={routes}/>
+                <Navbar routes={routes} />
             </div>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    {routes.map(({ path, element }, key) => (
-                        <Route key={key} path={path} element={element} />
-                    ))}
-                    <Route path="*" element={<Navigate to="/home" replace />} />
-                </Routes>
-            </Suspense>
+            <Component {...pageProps} />
         </>
     );
 }
