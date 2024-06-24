@@ -5,7 +5,7 @@ import ProjectCard from "@/widgets/projects/ProjectCard.jsx";
 import projectsData from '../data/projectsData';
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import projectsImg from "../../public/img/meeting.jpg";
+import projectsImg from "../../public/img/3.webp";
 import SmoothScrollbar from 'smooth-scrollbar';
 import "../css/styling.css";
 

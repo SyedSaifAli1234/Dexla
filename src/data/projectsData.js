@@ -1,8 +1,8 @@
 import React from 'react';
-import contract from "../../public/img/contract.jpg";
-import corporateLaw from "../../public/img/corporateLaw.jpg";
-import paperWork from "../../public/img/paperWork.jpg";
-import legalRules from "../../public/img/legalRules.jpg";
+import contract from "../../public/img/contract.webp";
+import corporateLaw from "../../public/img/corporateLaw.webp";
+import paperWork from "../../public/img/paperWork.webp";
+import legalRules from "../../public/img/3.webp";
 
 const projectsData = [
     {

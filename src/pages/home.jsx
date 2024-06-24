@@ -4,7 +4,7 @@ import { Typography, Button, Card, CardBody, CardHeader } from "@material-tailwi
 import { Footer } from "@/widgets/layout";
 import { FeatureCard } from "@/widgets/cards";
 import { featuresData } from "@/data";
-import judge from '../../public/img/judge.jpg';
+import judge from '../../public/img/judge.webp';
 import SmoothScrollbar from 'smooth-scrollbar';
 import { useNavigate } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer'; // Import useInView hook

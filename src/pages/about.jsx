@@ -1,12 +1,12 @@
 import { Typography, Button } from "@material-tailwind/react";
 import { motion, useAnimation } from "framer-motion";
 import { Footer } from "@/widgets/layout";
-import aboutUs from "../../public/img/about.jpg";
+import aboutUs from "../../public/img/corporateLaw.webp";
 import "../css/about.css";
 import { useEffect, useRef } from "react";
 import SmoothScrollbar from 'smooth-scrollbar';
 import "../css/styling.css";
-import photocv from "../../public/img/photocv.png";
+import photocv from "../../public/img/photocv.webp";
 
 export function About() {
     const controls = useAnimation();

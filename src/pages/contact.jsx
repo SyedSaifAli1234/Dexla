@@ -4,7 +4,7 @@ import { Button, Input, Textarea, Typography } from "@material-tailwind/react";
 import { Footer, PageTitle } from "@/widgets/layout";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
-import contactUs from "../../public/img/contactus.jpg";
+import contactUs from "../../public/img/contactus.webp";
 import "../css/contact.css";
 import SmoothScrollbar from "smooth-scrollbar";
 
