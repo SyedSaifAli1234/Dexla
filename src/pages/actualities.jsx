@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Typography, Button } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import publicationBack from "../../public/img/publicationBack.webp";
-import publicationImage from "../../public/img/publication.webp";
+import publicationImage from "../../public/img/judge.webp";
 import '../css/actualities.css';
 import SmoothScrollbar from "smooth-scrollbar";
 import { motion, useAnimation } from "framer-motion";
@@ -109,7 +109,7 @@ export function Actualities() {
                                 style={{ cursor: "pointer" }}
                             >
                                 <div className="flex flex-col items-center">
-                                    <img className="w-full h-auto max-w-lg object-cover" src={publicationImage} alt="Publication" />
+                                    <img className="w-full h-auto max-w-lg object-cover" src={publicationImage} alt="Publication" loading="lazy"/>
                                     <div className="p-4 text-center">
                                         <Typography variant="h6" color="blue-gray" className="font-bold mb-2">
                                             PUBLICATION

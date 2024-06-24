@@ -10,6 +10,7 @@ const ProjectCard = (props) => {
                         alt="Card Image"
                         src={props.project.img}
                         className="h-full w-full object-cover"
+                        loading="lazy"
                     />
                 </CardHeader>
                 <CardBody>

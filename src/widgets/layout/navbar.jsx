@@ -66,7 +66,7 @@ export function Navbar({ brandName, routes, action }) {
       <MTNavbar className="bg-black bg-opacity-50 border-0 w-full">
       <div className="container mx-auto flex items-center justify-between text-white">
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="" className="h-auto mr-2" />
+          <img src={logo} alt="" className="h-auto mr-2" loading="lazy"/>
         </Link>
         <div className="hidden lg:block"><NavList onClick={()=>{}}/></div>
         <IconButton

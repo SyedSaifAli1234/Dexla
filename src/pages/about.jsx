@@ -7,10 +7,12 @@ import { useEffect, useRef } from "react";
 import SmoothScrollbar from 'smooth-scrollbar';
 import "../css/styling.css";
 import photocv from "../../public/img/photocv.webp";
+import { useNavigate } from 'react-router-dom';
 
 export function About() {
     const controls = useAnimation();
     const scrollRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         let scrollbarInstance;
@@ -116,13 +118,13 @@ export function About() {
                                             </section>
                                         </div>
 
-                                        <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800 rounded-none">
+                                        <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800 rounded-none" onClick={() => navigate('/expertises')}>
                                             EN SAVOIR PLUS →
                                         </Button>
                                     </div>
                                 </motion.div>
                                 <div className="w-full lg:w-1/2 px-4" variants={imageVariants}>
-                                    <img src={photocv} alt="Nicolas Soukatchoff" className="rounded-lg shadow-lg" />
+                                    <img src={photocv} alt="Nicolas Soukatchoff" className="rounded-lg shadow-lg" loading="lazy"/>
                                 </div>
                             </div>
                         </div>

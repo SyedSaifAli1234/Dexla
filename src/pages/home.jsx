@@ -4,10 +4,9 @@ import { Typography, Button, Card, CardBody, CardHeader } from "@material-tailwi
 import { Footer } from "@/widgets/layout";
 import { FeatureCard } from "@/widgets/cards";
 import { featuresData } from "@/data";
-import judge from '../../public/img/judge.webp';
+import judge from '../../public/img/publication.webp';
 import SmoothScrollbar from 'smooth-scrollbar';
 import { useNavigate } from 'react-router-dom';
-import { useInView } from 'react-intersection-observer'; // Import useInView hook
 import '../css/home.css';
 
 const texts = [
@@ -19,24 +18,22 @@ const texts = [
 const animationDuration = 0.8; // Duration in seconds
 const animationInterval = 4000; // Interval in milliseconds for text change
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: animationDuration, ease: 'easeInOut' } },
+};
+
+const buttonVariants = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: { opacity: 1, scale: 1, transition: { delay: 0.8, duration: animationDuration, ease: 'easeInOut' } },
+};
+
 export function Home() {
   const controls = useAnimation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animateOut, setAnimateOut] = useState(false); // State to trigger fade out animation
   const navigate = useNavigate();
   const scrollRef = useRef(null);
-
-  // useInView hook to detect when the component is in view
-  const { ref: textRef, inView: textInView } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.5, // Trigger animation when 50% of the component is in view
-  });
-
-  // useInView hook for the section you want to animate
-  const { ref: animateRef, inView: animateInView } = useInView({
-    triggerOnce: true, // Only trigger once
-    threshold: 0.5, // Trigger animation when 50% of the component is in view
-  });
 
   useEffect(() => {
     let scrollbarInstance;
@@ -69,20 +66,8 @@ export function Home() {
   }, []);
 
   useEffect(() => {
-    if (textInView) {
-      controls.start('visible');
-    }
-  }, [controls, textInView]);
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: animationDuration, ease: 'easeInOut' } },
-  };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.5 },
-    visible: { opacity: 1, scale: 1, transition: { delay: 0.8, duration: animationDuration, ease: 'easeInOut' } },
-  };
+    controls.start('visible');
+  }, [controls]);
 
   return (
       <div data-scrollbar ref={scrollRef}>
@@ -91,7 +76,7 @@ export function Home() {
             <source src="/video/video3.mp4" type="video/mp4" />
           </video>
           <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
-          <motion.div className="max-w-8xl container relative mx-auto" ref={textRef} variants={cardVariants} initial="hidden" animate={controls}>
+          <motion.div className="max-w-8xl container relative mx-auto" variants={cardVariants} initial="hidden" animate={controls}>
             <div className="flex flex-wrap items-center">
               <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
                 <Typography variant="h1" color="white" className="mb-6 font-black text-6xl">
@@ -105,7 +90,7 @@ export function Home() {
                 </Typography>
                 <div className="mt-8 flex justify-center space-x-4">
                   <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800 rounded-none" size="large" onClick={() => navigate('/expertises')}>
-                    EN SAVOIR PLUS
+                    EN SAVOIR PLUS →
                   </Button>
                   <Button className="bg-transparent border border-blue-gray-900 text-white hover:bg-blue-gray-900 hover:text-white rounded-none" size="large" onClick={() => navigate('/contact')}>
                     Prendre rendez-vous
@@ -130,7 +115,7 @@ export function Home() {
                   />
               ))}
             </div>
-            <motion.div ref={animateRef} variants={cardVariants} initial="hidden" animate={animateInView ? 'visible' : 'hidden'} className="mt-32 flex flex-wrap justify-center">
+            <motion.div variants={cardVariants} initial="hidden" animate="visible" className="mt-32 flex flex-wrap justify-center">
               <div className="max-w-lg px-4 md:w-1/2 text-left">
                 <Typography variant="h3" className="mb-6 text-4xl font-extrabold text-blue-gray-900">
                   Ma présentation
@@ -144,16 +129,16 @@ export function Home() {
                 <Typography className="mb-12 text-lg text-blue-gray-600">
                   Fort de plus de 10 ans de pratique juridique, j'ai exercé dans plusieurs cabinets prestigieux où j'ai pu acquérir une expertise approfondie en droit des sociétés, des contrats et des affaires à destination des entrepreneurs individuels, TPE/PME et start-ups. Outre le français, je suis également compétent en anglais, ce qui me permet de représenter des clients dans des contextes internationaux.
                 </Typography>
-                <div variants={buttonVariants}>
+                <motion.div variants={buttonVariants}>
                   <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800 rounded-none" size="lg" onClick={() => navigate('/expertises')}>
                     EN SAVOIR PLUS →
                   </Button>
-                </div>
+                </motion.div>
               </div>
               <motion.div variants={cardVariants} className="mx-auto mt-35 flex w-full px-4 md:w-4/12 lg:mt-0">
                 <Card className="shadow-lg shadow-gray-500/10">
                   <CardHeader className="relative h-56">
-                    <img alt="Card Image" src={judge} className="h-full w-full object-cover" />
+                    <img alt="Card Image" src={judge} className="h-full w-full object-cover" loading="lazy"/>
                   </CardHeader>
                   <CardBody>
                     <Typography variant="h5" color="blue-gray" className="mb-3 font-bold">
