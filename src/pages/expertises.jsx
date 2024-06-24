@@ -1,15 +1,17 @@
 import { Typography } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import ProjectCard from "@/widgets/projects/ProjectCard.jsx";
-import projectsData from '@/data/projectsData';
+import projectsData from '../data/projectsData';
 import { useEffect, useState, useRef } from "react";
-import { useRouter } from "next/router"; // Replace useNavigate with useRouter
+import { useNavigate } from "react-router-dom";
 import projectsImg from "../../public/img/meeting.jpg";
 import SmoothScrollbar from 'smooth-scrollbar';
+import "../css/styling.css";
 
 export function Expertises() {
+
     const [selectedProject, setSelectedProject] = useState(null);
-    const router = useRouter(); // Replace useNavigate with useRouter
+    const navigate = useNavigate();
     const scrollRef = useRef(null);
 
     useEffect(() => {

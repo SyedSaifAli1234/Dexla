@@ -5,7 +5,8 @@ import { FeatureCard } from "@/widgets/cards";
 import { featuresData } from "@/data";
 import judge from '../../public/img/judge.jpg';
 import SmoothScrollbar from 'smooth-scrollbar'; // Import Smooth Scrollbar
-import { useRouter } from 'next/router'; // Replace useNavigate with useRouter
+import { useNavigate } from 'react-router-dom';
+import '../css/home.css';
 
 const texts = [
   ["Droit des", "sociétés", "Plus de 10 ans d'expérience"],
@@ -19,7 +20,7 @@ const animationInterval = 4000; // Interval in milliseconds for text change
 export function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [animateOut, setAnimateOut] = useState(false); // State to trigger fade out animation
-  const router = useRouter();
+  const navigate = useNavigate();
   const scrollRef = useRef(null);
 
   useEffect(() => {
@@ -73,11 +74,11 @@ export function Home() {
                 </Typography>
                 <div className="mt-8 flex justify-center space-x-4">
                   <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800 rounded-none"
-                          size="large" onClick={() => router.push('/expertises')}>
+                          size="large" onClick={() => navigate('/expertises')}>
                     EN SAVOIR PLUS
                   </Button>
                   <Button className="bg-transparent border border-blue-gray-900 text-white
-          hover:bg-blue-gray-900 hover:text-white rounded-none" size="large" onClick={() => router.push('/contact')}>
+            hover:bg-blue-gray-900 hover:text-white rounded-none" size="large" onClick={() => navigate('/contact')}>
                     Prendre rendez-vous
                   </Button>
                 </div>
@@ -114,7 +115,7 @@ export function Home() {
                 <Typography className="mb-12 text-lg text-blue-gray-600">
                   Fort de plus de 10 ans de pratique juridique, j'ai exercé dans plusieurs cabinets prestigieux où j'ai pu acquérir une expertise approfondie en droit des sociétés, des contrats et des affaires à destination des entrepreneurs individuels, TPE/PME et start-ups. Outre le français, je suis également compétent en anglais, ce qui me permet de représenter des clients dans des contextes internationaux.
                 </Typography>
-                <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800 rounded-none" size="lg" onClick={() => router.push('/expertises')}>
+                <Button className="bg-blue-gray-900 text-white hover:bg-blue-gray-800 rounded-none" size="lg" onClick={() => navigate('/expertises')}>
                   EN SAVOIR PLUS →
                 </Button>
               </div>

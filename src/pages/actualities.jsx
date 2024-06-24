@@ -3,6 +3,7 @@ import { Typography, Button } from "@material-tailwind/react";
 import { Footer } from "@/widgets/layout";
 import publicationBack from "../../public/img/publicationBack.jpg";
 import publicationImage from "../../public/img/publication.png";
+import '../css/actualities.css';
 import SmoothScrollbar from "smooth-scrollbar";
 
 export function Actualities() {
