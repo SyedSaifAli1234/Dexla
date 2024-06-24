@@ -5,6 +5,7 @@ import publicationBack from "../../public/img/publicationBack.jpg";
 import publicationImage from "../../public/img/publication.png";
 import '../css/actualities.css';
 import SmoothScrollbar from "smooth-scrollbar";
+import { motion, useAnimation } from "framer-motion";
 
 export function Actualities() {
     const scrollRef = useRef(null);
@@ -34,6 +35,12 @@ export function Actualities() {
         };
     }, []);
 
+    const controls = useAnimation();
+
+    useEffect(() => {
+        controls.start('visible');
+    }, [controls]);
+
     return (
         <div data-scrollbar ref={scrollRef}>
             <section className="relative block h-[25vh]">
@@ -48,7 +55,13 @@ export function Actualities() {
                 <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
             </section>
             {publicationDetail ? (
-                <section className="relative bg-white py-8 px-4">
+                <motion.section
+                    className="relative bg-white py-8 px-4"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
                     <div className="container max-w-4xl mx-auto text-left">
                         <button type="button"
                                 className="mb-10 text-white bg-blue-gray-500 hover:bg-blue-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-gray-600 dark:hover:bg-blue-gray-700 dark:focus:ring-blue-gray-800"
@@ -58,7 +71,6 @@ export function Actualities() {
                             </svg>
                             Retour
                         </button>
-
 
                         <Typography variant="h6" className="text-gray-600 mb-2">👤 Nicolas | 📅 21 December 2023</Typography>
                         <Typography variant="h4" className="font-bold mb-6">Comprendre le rôle essentiel d'un avocat dans le système juridique</Typography>
@@ -76,12 +88,20 @@ export function Actualities() {
                             Partagez : <a href="#"><i className="fab fa-facebook"></i></a> <a href="#"><i className="fab fa-twitter"></i></a> <a href="#"><i className="fab fa-linkedin"></i></a>
                         </Typography>
                     </div>
-                </section>
+                </motion.section>
             ) : (
-                <section className="relative bg-white py-8 px-4">
+                <motion.section
+                    className="relative bg-white py-8 px-4"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.6 }}
+                >
                     <div className="container max-w-sm mx-auto text-left">
                         <div className="px-4 py-6">
-                            <div
+                            <motion.div
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
                                 className="card rounded overflow-hidden shadow-lg mb-4 transition duration-300"
                                 onClick={() => {
                                     setPublicationDetail(true);
@@ -105,10 +125,10 @@ export function Actualities() {
                                         </Typography>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
-                </section>
+                </motion.section>
             )}
             <div className="bg-blue-gray-50/50">
                 <Footer />
