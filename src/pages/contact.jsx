@@ -112,6 +112,24 @@ export function Contact() {
                         <div className="relative mb-6 -mt-64 flex w-full min-w-0 flex-col break-words rounded-3xl bg-white shadow-xl shadow-gray-500/5">
                             <div className="px-6">
                                 <div className="mb-10 border-t border-blue-gray-50 py-6 text-center">
+                                    <Typography variant="h6" color="gray" className="mb-4">
+                                        <a href="tel:0607167856">
+                                            <i className="fas fa-phone-alt mr-2" />
+                                            06 07 16 78 56
+                                        </a>
+                                    </Typography>
+                                    <Typography variant="h6" color="gray" className="mb-4">
+                                        <a href="mailto:accueil@soukatchoff-avocat.com">
+                                            <i className="fas fa-envelope mr-2" />
+                                            accueil@soukatchoff-avocat.com
+                                        </a>
+                                    </Typography>
+                                    <Typography variant="h6" color="gray" className="mb-10">
+                                        <a href="https://www.google.com/maps/search/?api=1&query=16+place+Raphaël+-+Le+Diamant+Vert+-+34000+Montpellier" target="_blank" rel="noopener noreferrer">
+                                            <i className="fas fa-map-marker-alt mr-2" />
+                                            16 place Raphaël - Le Diamant Vert - 34000 Montpellier
+                                        </a>
+                                    </Typography>
                                     <PageTitle heading="Vous voulez nous contacter?">
                                         Remplissez ce formulaire et nous vous répondrons dans les 24 heures.
                                     </PageTitle>
@@ -123,7 +141,7 @@ export function Contact() {
                                             <Input
                                                 variant="outlined"
                                                 size="lg"
-                                                label="Name"
+                                                label="Nom"
                                                 value={name}
                                                 onChange={(e) => setName(e.target.value)}
                                                 className="w-full form-input"
@@ -143,7 +161,7 @@ export function Contact() {
                                             <Input
                                                 variant="outlined"
                                                 size="lg"
-                                                label="Subject"
+                                                label="Sujet"
                                                 value={subject}
                                                 onChange={(e) => setSubject(e.target.value)}
                                                 className="w-full form-input"

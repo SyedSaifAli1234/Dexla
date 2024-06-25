@@ -5,35 +5,44 @@ import {
   ChartBarIcon
 } from "@heroicons/react/24/solid";
 
-export const featuresData = [
+import contract from "../../public/img/contract.webp";
+import corporateLaw from "../../public/img/corporateLaw.webp";
+import paperWork from "../../public/img/paperWork.webp";
+import legalRules from "../../public/img/3.webp";
+
+const projectsData = [
   {
-    color: "blue",
-    title: "Blessures Corporelles",
-    icon: StarIcon,
-    description:
-        "Offrir une représentation compatissante et efficace pour les personnes blessées à la suite d'accidents ou de négligence, garantissant que vous recevez la compensation que vous méritez.",
+    title: 'Droit des sociétés',
+    img: corporateLaw,
+    desc: 'Constitution, augmentation de capital, émission de valeurs mobilières : BSA, BSPCE, OC, actions gratuites, transformation de société, fusion, TUP, dissolution, liquidation.'
   },
   {
-    color: "red",
-    title: "Droit de la Famille",
-    icon: UserGroupIcon,
-    description:
-        "Fournir des services juridiques experts en divorce, garde d'enfants et litiges familiaux, dédiés à la protection des intérêts de votre famille.",
+    title: 'Contrat',
+    img: contract,
+    desc: 'Baux, cession de fonds de commerce, cession de titres, GAP, pacte d’associés, mandat, contrat de fourniture, apport d’affaires, partenariat, CGV, accord de confidentialité, lettre d\'intention.'
   },
   {
-    color: "teal",
-    title: "Défense Pénale",
-    icon: CircleStackIcon,
-    description:
-        "Défendre vos droits avec une stratégie robuste, des infractions mineures aux accusations graves, engagés à obtenir le meilleur résultat possible.",
+    title: 'Vie des sociétés',
+    img: paperWork,
+    desc: 'Assemblées, approbation des comptes, formalités administratives.'
   },
   {
-    color: "purple",
-    title: "Planification Patrimoniale",
-    icon: ChartBarIcon,
-    description:
-        "Vous aider à planifier l'avenir avec une planification patrimoniale complète, y compris les testaments, les fiducies et les services de succession pour sécuriser votre héritage.",
+    title: 'Structuration des professions libérales',
+    img: legalRules,
+    desc: 'Évaluation de la patientèle, owner-buy out, création de SEL, SPFPL, rapport avec les ordres professionnels (médecins, dentistes, pharmaciens, etc.).'
   }
 ];
+
+export const featuresData = projectsData.map((project, index) => {
+  const icons = [StarIcon, UserGroupIcon, CircleStackIcon, ChartBarIcon];
+  const colors = ["blue", "red", "teal", "purple"];
+
+  return {
+    color: colors[index % colors.length],
+    title: project.title,
+    icon: icons[index % icons.length],
+    description: project.desc,
+  };
+});
 
 export default featuresData;
