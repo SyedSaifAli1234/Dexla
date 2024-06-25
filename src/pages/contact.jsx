@@ -112,8 +112,8 @@ export function Contact() {
                         <div className="relative mb-6 -mt-64 flex w-full min-w-0 flex-col break-words rounded-3xl bg-white shadow-xl shadow-gray-500/5">
                             <div className="px-6">
                                 <div className="mb-10 border-t border-blue-gray-50 py-6 text-center">
-                                    <PageTitle heading="Want to write us?">
-                                        Complete this form and we will get back to you in 24 hours.
+                                    <PageTitle heading="Vous voulez nous contacter?">
+                                        Remplissez ce formulaire et nous vous répondrons dans les 24 heures.
                                     </PageTitle>
                                     <form
                                         className="mx-auto mt-12 max-w-3xl text-left"
