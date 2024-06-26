@@ -113,21 +113,21 @@ export function Contact() {
                             <div className="px-6">
                                 <div className="mb-10 border-t border-blue-gray-50 py-6 text-center">
                                     <Typography variant="h6" color="gray" className="mb-4">
-                                        <a href="tel:0607167856">
+                                        <a href="tel:0788246957">
                                             <i className="fas fa-phone-alt mr-2" />
-                                            06 07 16 78 56
+                                            07 88 24 69 57
                                         </a>
                                     </Typography>
                                     <Typography variant="h6" color="gray" className="mb-4">
-                                        <a href="mailto:accueil@soukatchoff-avocat.com">
+                                        <a href="mailto:contact@nsavocat.net">
                                             <i className="fas fa-envelope mr-2" />
-                                            accueil@soukatchoff-avocat.com
+                                            contact@nsavocat.net
                                         </a>
                                     </Typography>
                                     <Typography variant="h6" color="gray" className="mb-10">
-                                        <a href="https://www.google.com/maps/search/?api=1&query=16+place+Raphaël+-+Le+Diamant+Vert+-+34000+Montpellier" target="_blank" rel="noopener noreferrer">
+                                        <a href="https://www.google.com/maps/search/?api=1&query=10+route+de+l'aviation+-+54600+Villers+les+Nancy" target="_blank" rel="noopener noreferrer">
                                             <i className="fas fa-map-marker-alt mr-2" />
-                                            16 place Raphaël - Le Diamant Vert - 34000 Montpellier
+                                            10 route de l'aviation - 54600 Villers les Nancy
                                         </a>
                                     </Typography>
                                     <PageTitle heading="Vous voulez nous contacter?">

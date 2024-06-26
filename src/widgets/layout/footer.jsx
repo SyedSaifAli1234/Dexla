@@ -7,10 +7,10 @@ const year = new Date().getFullYear();
 export function Footer({
                            title = "NS Avocat",
                            description = "Nicolas Soukatchoff",
-                           contactEmail = "accueil@soukatchoff-avocat.com",
+                           contactEmail = "contact@nsavocat.net",
                            contactHours = "Lundi au vendredi : 9h - 18h",
-                           contactPhone = "06 07 16 78 56",
-                           location= "16 place Raphaël - Le Diamant Vert - 34000 Montpellier",
+                           contactPhone = "07 88 24 69 57",
+                           location= "10 route de l'aviation - 54600 Villers les Nancy",
                            legalNotice = "Mentions légales - RGPD"
                        }) {
 
