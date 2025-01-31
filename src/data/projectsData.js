@@ -12,7 +12,7 @@ import chatImg from "../../public/img/chat.jpg";
 
 const projectsData = [
     {
-        title: 'Digitalisation',
+        title: 'Digitalization',
         img: digitalizationImg,
         desc: 'Business digitalization uses digital technologies to transform business operations, processes, and customer experiences. It uses digital tools and technologies to optimize workflows, improve efficiency, and enhance customer experiences.',
         details: Digitalization

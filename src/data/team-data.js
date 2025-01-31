@@ -5,7 +5,7 @@ export const teamData = [
   {
     img: s1,
     name: "Digi Dexla",
-    position: "Our mission is to assist you in effectively executing digitalisation strategies within your organisation. We provide comprehensive consultation, as well as end-to-end product implementation, to ensure seamless integration and successful adoption of digital solutions.",
+    position: "Our mission is to assist you in effectively executing digitalization strategies within your organisation. We provide comprehensive consultation, as well as end-to-end product implementation, to ensure seamless integration and successful adoption of digital solutions.",
     socials: [],
   },
   {
