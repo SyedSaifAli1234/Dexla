@@ -1,4 +1,4 @@
-import {About, Contact, Home } from "@/pages";
+import {About, Contact, Home, Solutions} from "@/pages";
 import {EnvelopeIcon, HomeIcon, InformationCircleIcon, UserCircleIcon,} from "@heroicons/react/24/solid";
 import React from "react";
 const Projects = React.lazy(() => import('@/pages/projects.jsx'));
@@ -21,6 +21,12 @@ export const routes = [
     name: "About us",
     path: "/about",
     element: <About />,
+  },
+  {
+    icon: InformationCircleIcon,
+    name: "Our Solutions",
+    path: "/solutions",
+    element: <Solutions />,
   },
   {
     icon: EnvelopeIcon,
