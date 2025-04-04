@@ -11,7 +11,7 @@ export const teamData = [
   {
     img: s2,
     name: "Dexla Safe",
-    position: "Wir bieten regelmäßig branchenrelevante Schulungsprogramme und Workshops an. Unsere zertifizierten Dozenten verfügen über langjährige Erfahrung in ihrem Fachgebiet und geben ihr Fachwissen gerne an ihre Schüler weiter.",
+    position: "We regularly offer industry-relevant training programs and workshops. Our certified instructors have many years of experience in their field and are happy to share their expertise with their students.",
     socials: [],
   },
 ];

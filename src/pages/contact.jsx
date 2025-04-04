@@ -1,6 +1,6 @@
 import { Button, Input, Textarea } from "@material-tailwind/react";
 import { Footer, PageTitle } from "@/widgets/layout";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
 import contactUs from "../../public/img/contactus.jpg";
@@ -11,6 +11,10 @@ export function Contact() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     emailjs.init("qypEBbU0sp4R-nhpQ");
 

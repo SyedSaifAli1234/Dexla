@@ -16,7 +16,7 @@ import {
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-
+import { Link } from 'react-router-dom';
 export function Solutions() {
   const solution = {
     title: "Dexla Law",
@@ -107,8 +107,7 @@ export function Solutions() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-      <div className="relative py-20 text-center" ref={ref}>
-        {/* Vertical line */}
+      <div className="relative py-20 text-center px-4" ref={ref}>
         <motion.div
           className="absolute left-1/2 -top-12 w-px h-24 bg-gradient-to-b from-transparent to-blue-300"
           initial={{ scaleY: 0, opacity: 0 }}
@@ -116,15 +115,15 @@ export function Solutions() {
           transition={{ duration: 0.8, delay: 0.2 }}
         />
         
-        <div className="overflow-hidden">
+        <div className="overflow-hidden w-full">
           <motion.div
             initial={{ y: "100%" }}
             animate={isInView ? { y: 0 } : { y: "100%" }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-            className="whitespace-nowrap"
+            className="whitespace-normal md:whitespace-nowrap"
           >
             <motion.span
-              className="text-5xl md:text-6xl lg:text-7xl font-light text-blue-500 inline-block"
+              className="text-4xl md:text-5xl lg:text-7xl font-light text-blue-500 inline-block"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ duration: 0.5, delay: 0.8 }}
@@ -136,7 +135,7 @@ export function Solutions() {
 
         {/* Underline */}
         <motion.div
-          className="h-px bg-blue-300 max-w-4xl mx-auto mt-4"
+          className="h-px bg-blue-300 w-[90%] md:max-w-4xl mx-auto mt-4"
           initial={{ scaleX: 0, opacity: 0 }}
           animate={isInView ? { scaleX: 1, opacity: 1 } : { scaleX: 0, opacity: 0 }}
           transition={{ duration: 1, delay: 1.4 }}
@@ -339,7 +338,7 @@ export function Solutions() {
                           <p>Legal professionals should use AI tools specifically trained for legal contexts, as generic AI models lack the expertise and precision required for accurate legal research.</p>
                         </div>
                       </div>
-                      <img src={man} alt="Legal Case Cutout" className="w-3/4 object-contain" />
+                      <img src={man} alt="Legal Case Cutout" className="hidden md:block w-3/4 object-contain" />
                     </div>
                   </div>
                 </div>
@@ -430,36 +429,43 @@ export function Solutions() {
 
                 {/* Features Section */}
                 <div className="max-w-6xl mx-auto mb-32">
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div className="flex flex-col space-y-4">
-                    <img src="/img/competition.png" alt="Competition"/>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-4">
-                      {[
-                        {
-                          title: "Comprehensive All-in-One Solution",
-                          detail: "DexlaLaw combines drafting, analysis, compliance, and risk management into one platform"
-                        },
-                        {
-                          title: "Advanced AI and Transparency",
-                          detail: "DexlaLaw uses advanced NLP and AI transparency to ensure accuracy and reliability"
-                        },
-                        {
-                          title: "Localized Compliance",
-                          detail: "Tailored for European legal systems, meeting GDPR requirements"
-                        },
-                        {
-                          title: "Cost-Effective Solution",
-                          detail: "Affordable legal tech for SMEs while ensuring market expansion"
-                        }
-                      ].map((advantage, index) => (
-                        <div key={index} className="bg-gradient-to-br from-orange-100 to-orange-200 p-6 rounded-xl">
-                          <h4 className="text-lg font-semibold mb-2">{advantage.title}</h4>
-                          <p className="text-sm text-gray-700">{advantage.detail}</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    {[
+                      {
+                        title: "Comprehensive All-in-One Solution",
+                        detail: "DexlaLaw combines drafting, analysis, compliance, and risk management into one platform"
+                      },
+                      {
+                        title: "Advanced AI and Transparency",
+                        detail: "DexlaLaw uses advanced NLP and AI transparency to ensure accuracy and reliability"
+                      },
+                      {
+                        title: "Localized Compliance",
+                        detail: "Tailored for European legal systems, meeting GDPR requirements"
+                      },
+                      {
+                        title: "Cost-Effective Solution",
+                        detail: "Affordable legal tech for SMEs while ensuring market expansion"
+                      }
+                    ].map((advantage, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="bg-orange-50 hover:bg-orange-100 transition-all duration-300 p-8 rounded-2xl shadow-lg hover:shadow-xl"
+                      >
+                        <div className="text-center">
+                          <h4 className="text-xl font-bold text-gray-900 mb-4">
+                            {advantage.title}
+                          </h4>
+                          <p className="text-gray-600 leading-relaxed">
+                            {advantage.detail}
+                          </p>
                         </div>
-                      ))}
-                    </div>
+                      </motion.div>
+                    ))}
                   </div>
                 </div>
 
@@ -515,50 +521,6 @@ export function Solutions() {
                   </div>
                 </div>
 
-                {/* Business Model Section */}
-                <div className="max-w-6xl mx-auto mb-20 bg-blue-gray-900 rounded-xl p-8 text-white">
-                  <h2 className="text-3xl font-bold mb-8 text-center">Business Model</h2>
-                  <div className="grid md:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4 text-orange-400">Revenue Streams</h3>
-                      <ul className="space-y-3">
-                        <li>• Subscription Plans: Tiered SaaS pricing (Basic, Premium, Enterprise)</li>
-                        <li>• Pay-per-Use: One-time document analysis features</li>
-                        <li>• Custom Integrations: Tailored enterprise solutions</li>
-                      </ul>
-                      
-                      <div className="mt-8">
-                        <h3 className="text-xl font-semibold mb-4 text-orange-400">Pricing</h3>
-                        <ul className="space-y-3">
-                          <li>• €35,000 to €140,000 based on firm size and users</li>
-                          <li>• Competitive rates below market average</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-semibold mb-4 text-orange-400">Sales Channels</h3>
-                      <div className="space-y-6">
-                        <div>
-                          <h4 className="font-semibold mb-2">Primary</h4>
-                          <ul className="space-y-2">
-                            <li>• Direct Sales Team targeting law firms</li>
-                            <li>• Online Sales Platform for subscriptions</li>
-                          </ul>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold mb-2">Secondary</h4>
-                          <ul className="space-y-2">
-                            <li>• Channel Partnerships with legal tech resellers</li>
-                            <li>• Referral Program for existing customers</li>
-                            <li>• Events and Conferences networking</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Investment Stats Section */}
                 <div className="max-w-6xl mx-auto mb-20">
                   <h2 className="text-3xl font-bold text-center mb-12">Investment Stats</h2>
@@ -577,47 +539,40 @@ export function Solutions() {
                     </div>
                   </div>
                   {/* Added Investment Stats Graph */}
-                  <div className="bg-navy-900 p-8 rounded-xl mt-12">
-                    <h3 className="text-2xl font-bold text-black mb-6">Legal AI Investment Trends</h3>
-                    <div className="h-[400px] w-full">
+                  <div className="bg-navy-900 p-4 md:p-8 rounded-xl mt-12">
+                    <h3 className="text-xl md:text-2xl font-bold text-black mb-6 text-center">Legal AI Investment Trends</h3>
+                    <div className="h-[300px] md:h-[400px] w-full">
                       <ResponsiveContainer width="100%" height="100%">
                         <ComposedChart
                           data={investmentTrendsData}
                           margin={{
                             top: 20,
-                            right: 30,
-                            left: 20,
+                            right: 20,
+                            left: 0,
                             bottom: 20,
                           }}
                         >
                           <CartesianGrid strokeDasharray="3 3" stroke="#444" />
                           <XAxis 
                             dataKey="year" 
-                            stroke="#000" // Changed from white to black
+                            stroke="#000"
+                            fontSize={12}
                           />
                           <YAxis 
                             yAxisId="left"
                             orientation="left"
-                            stroke="#000" // Changed from white to black
+                            stroke="#000"
                             domain={[0, 300]}
-                            label={{ 
-                              value: 'Total Funding (USD Mn)', 
-                              angle: -90, 
-                              position: 'insideLeft',
-                              style: { fill: '#000' } // Changed from white to black
-                            }}
+                            fontSize={12}
+                            width={40}
                           />
                           <YAxis 
                             yAxisId="right"
                             orientation="right"
-                            stroke="#000" // Changed from white to black
+                            stroke="#000"
                             domain={[0, 40]}
-                            label={{ 
-                              value: 'Funding Rounds', 
-                              angle: 90, 
-                              position: 'insideRight',
-                              style: { fill: '#000' } // Changed from white to black
-                            }}
+                            fontSize={12}
+                            width={40}
                           />
                           <Tooltip 
                             contentStyle={{ backgroundColor: '#1e293b', border: 'none', color: '#fff' }}
@@ -626,7 +581,7 @@ export function Solutions() {
                           <Legend 
                             verticalAlign="top" 
                             height={36}
-                            wrapperStyle={{ color: '#fff' }}
+                            wrapperStyle={{ color: '#fff', fontSize: '12px' }}
                           />
                           <Bar 
                             yAxisId="left"
@@ -654,55 +609,6 @@ export function Solutions() {
                 <div className="bg-navy-900 py-20 px-4 mb-20">
                   <div className="container mx-auto">
                     <h2 className="text-5xl font-bold text-orange-400 mb-16">Why Us?</h2>
-                    
-                    <div className="grid md:grid-cols-2 gap-12 mb-12">
-                      {/* Global Revenue Chart */}
-                      <div>
-                        <h3 className="text-black text-2xl mb-6">Global Revenue Projections (USD Mn)</h3>
-                        <div className="h-[400px]">
-                          <ResponsiveContainer width="100%" height="100%">
-                            <BarChart
-                              data={globalRevenueData}
-                              margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-                            >
-                              <CartesianGrid strokeDasharray="3 3" stroke="#444" />
-                              <XAxis dataKey="year" stroke="#000" />
-                              <YAxis stroke="#000" domain={[0, 90]} />
-                              <Tooltip
-                                contentStyle={{ backgroundColor: '#1e293b', border: 'none', color: '#000' }}
-                                labelStyle={{ color: '#fff' }}
-                              />
-                              <Legend wrapperStyle={{ color: '#000' }} />
-                              <Bar dataKey="min" name="Min" fill="#f97316" />
-                              <Bar dataKey="avg" name="Average" fill="#7dd3fc" />
-                              <Bar dataKey="max" name="Max" fill="#94a3b8" />
-                            </BarChart>
-                          </ResponsiveContainer>
-                        </div>
-                      </div>
-
-                      {/* Domestic Revenue Chart */}
-                      <div>
-                        <h3 className="text-black text-2xl mb-6">Domestic Revenue - Austria (€ Mn)</h3>
-                        <div className="h-[400px]">
-                          <ResponsiveContainer width="100%" height="100%">
-                            <BarChart
-                              data={domesticRevenueData}
-                              margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-                            >
-                              <CartesianGrid strokeDasharray="3 3" stroke="#444" />
-                              <XAxis dataKey="year" stroke="#000" />
-                              <YAxis stroke="#000" domain={[0, 10]} />
-                              <Tooltip
-                                contentStyle={{ backgroundColor: '#1e293b', border: 'none', color: '#fff' }}
-                                labelStyle={{ color: '#fff' }}
-                              />
-                              <Bar dataKey="value" fill="#f97316" />
-                            </BarChart>
-                          </ResponsiveContainer>
-                        </div>
-                      </div>
-                    </div>
 
                     {/* Description Text */}
                     <div className="grid md:grid-cols-2 gap-12">
@@ -733,9 +639,9 @@ export function Solutions() {
 
                 {/* CTA Section */}
                 <div className="text-center mb-12">
-                  <button className="bg-blue-600 hover:bg-blue-700 text-white py-4 px-10 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  <Link to="/contact" className="bg-blue-600 hover:bg-blue-700 text-white py-4 px-10 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer">
                     Contact Us for a Demo
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
